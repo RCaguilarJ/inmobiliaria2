@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Sora", sans-serif;
+  --font-sans: "Manrope", sans-serif;
+
+  --color-surface: #f5f6f2;
+  --color-surface-soft: #eef1eb;
+  --color-card: #ffffff;
+  --color-ink: #223042;
+  --color-copy: #5f6d7a;
+  --color-line: #d7ded8;
+  --color-navy: #1f2e3b;
+  --color-navy-strong: #17222d;
+  --color-accent: #0f826d;
+  --color-accent-soft: #dceee7;
+  --color-accent-deep: #0b6555;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(circle at top left, rgba(15, 130, 109, 0.06), transparent 30%),
+    linear-gradient(180deg, #f8f8f4 0%, #f5f6f2 100%);
+  color: var(--color-ink);
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a,
+button {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+img {
+  display: block;
+}
+
+.editorial-kicker {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.section-rule {
+  height: 1px;
+  width: 72px;
+  background: linear-gradient(90deg, rgba(15, 130, 109, 0.8), rgba(15, 130, 109, 0.1));
+}
+
+.card-shell {
+  border: 1px solid rgba(215, 222, 216, 0.95);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow:
+    0 18px 48px rgba(31, 46, 59, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.dark-panel {
+  background:
+    radial-gradient(circle at top left, rgba(15, 130, 109, 0.18), transparent 28%),
+    linear-gradient(180deg, rgba(31, 46, 59, 0.98) 0%, rgba(23, 34, 45, 1) 100%);
+}
+
+.ghost-outline {
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+input,
+select,
+textarea {
+  color: var(--color-ink);
+  background-color: white;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #8a97a4;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-deep);
+}
