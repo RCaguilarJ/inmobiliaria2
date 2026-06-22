@@ -10,39 +10,47 @@ export interface NavItem {
   path: PagePath;
 }
 
-export interface Metric {
-  label: string;
-  value: string;
-  description: string;
+export interface HeroFeature {
+  title: string;
 }
 
 export interface FeatureCard {
-  eyebrow: string;
+  badge?: string;
   title: string;
   description: string;
+  linkLabel?: string;
 }
 
-export interface ServiceCard {
+export interface ServiceTile {
+  number: string;
   title: string;
-  description: string;
 }
 
-export interface BulletGroup {
+export interface ListCard {
   title: string;
   items: string[];
 }
 
-export interface UnitType {
-  name: string;
-  area: string;
-  summary: string;
-  detail: string;
+export interface MarketCard {
+  index: string;
+  title: string;
+  description: string;
 }
 
-export interface GalleryImage {
-  src: string;
-  alt: string;
+export interface DevelopmentProject {
+  name: string;
+  location: string;
+  category: string;
+  status: string;
+  description: string;
+  image: string;
+}
+
+export interface ContactCard {
+  title: string;
+  value: string;
   caption: string;
+  href?: string;
 }
 
 export interface ContactInfo {
@@ -51,6 +59,19 @@ export interface ContactInfo {
   email: string;
   address: string;
   officeHours: string;
-  website: string;
-  whatsappHref: string;
+  whatsappHref?: string;
+}
+
+export interface ProjectImageMap {
+  homeHero: string;
+  homeCta: string;
+  aboutHero: string;
+  servicesHero: string;
+  developmentsHero: string;
+  contactHero: string;
+  aboutFeature: string;
+  galleryWide: string;
+  gallerySmallA: string;
+  gallerySmallB: string;
+  officeBanner: string;
 }

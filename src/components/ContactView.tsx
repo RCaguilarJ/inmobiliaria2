@@ -1,7 +1,10 @@
-import { Mail, MapPin, Phone } from 'lucide-react';
-import { CONTACT_INFO, PROJECT_IMAGES, SITE_COPY } from '../data';
+import { Clock3, Mail, MapPin, Phone } from 'lucide-react';
+import { CONTACT_CARDS, PROJECT_IMAGES, SITE_COPY } from '../data';
 import ContactForm from './ContactForm';
 import PageHero from './PageHero';
+import Reveal from './Reveal';
+
+const icons = [Phone, Mail, MapPin, Clock3];
 
 export default function ContactView() {
   return (
@@ -11,84 +14,77 @@ export default function ContactView() {
         eyebrow={SITE_COPY.contact.eyebrow}
         title={SITE_COPY.contact.title}
         subtitle={SITE_COPY.contact.subtitle}
+        titleClassName="max-w-[760px] text-5xl leading-[0.95] sm:text-6xl lg:text-[4.4rem]"
       />
 
-      <section className="px-6 py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-          <div>
-            <span className="editorial-kicker text-[var(--color-accent-deep)]/80">Información de contacto</span>
-            <h2 className="mt-4 font-heading text-4xl font-extrabold text-[var(--color-navy)] sm:text-5xl">
-              Estamos aquí para ayudarte
+      <section className="bg-white px-6 py-20 sm:py-24">
+        <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+          <Reveal>
+            <p className="editorial-kicker text-[var(--color-copy)]/70">INFORMACIÓN DE CONTACTO</p>
+            <h2 className="mt-4 font-heading text-[2.9rem] font-extrabold tracking-[-0.05em] text-[var(--color-heading)] sm:text-[4.2rem]">
+              ESTAMOS AQUÍ PARA TI
             </h2>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-[var(--color-copy)]">
-              Ya sea para revisar tipologías, amenidades, recorrido, material comercial o acompañamiento de Luxent, este es el punto de entrada para continuar la conversación.
-            </p>
+            <p className="mt-6 max-w-[590px] text-base leading-8 text-[var(--color-copy)]">{SITE_COPY.contact.intro}</p>
 
-            <div className="mt-10 space-y-6">
-              <a href={CONTACT_INFO.phoneHref} className="card-shell flex items-start gap-4 rounded-[24px] p-5">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--color-accent-soft)] text-[var(--color-accent-deep)]">
-                  <Phone className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--color-accent-deep)]/75">Teléfono</p>
-                  <p className="mt-2 text-xl font-bold text-[var(--color-navy)]">{CONTACT_INFO.phoneDisplay}</p>
-                  <p className="mt-1 text-sm text-[var(--color-copy)]">{CONTACT_INFO.officeHours}</p>
-                </div>
-              </a>
+            <div className="mt-10 space-y-7">
+              {CONTACT_CARDS.map((card, index) => {
+                const Icon = icons[index];
+                const content = (
+                  <>
+                    <div className="inline-flex h-12 w-12 items-center justify-center border border-[var(--color-line)] text-[var(--color-accent-strong)]">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--color-copy)]">
+                        {card.title}
+                      </p>
+                      <p className="mt-2 text-[1.95rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-[var(--color-heading)]">
+                        {card.value}
+                      </p>
+                      <p className="mt-1 text-sm leading-7 text-[var(--color-copy)]">{card.caption}</p>
+                    </div>
+                  </>
+                );
 
-              <a href={`mailto:${CONTACT_INFO.email}`} className="card-shell flex items-start gap-4 rounded-[24px] p-5">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--color-accent-soft)] text-[var(--color-accent-deep)]">
-                  <Mail className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--color-accent-deep)]/75">Correo electrónico</p>
-                  <p className="mt-2 text-xl font-bold text-[var(--color-navy)]">{CONTACT_INFO.email}</p>
-                  <p className="mt-1 text-sm text-[var(--color-copy)]">Seguimiento comercial y solicitud de información.</p>
-                </div>
-              </a>
+                if (card.href) {
+                  return (
+                    <a key={card.title} href={card.href} className="flex items-start gap-5">
+                      {content}
+                    </a>
+                  );
+                }
 
-              <div className="card-shell flex items-start gap-4 rounded-[24px] p-5">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--color-accent-soft)] text-[var(--color-accent-deep)]">
-                  <MapPin className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--color-accent-deep)]/75">Oficina comercial</p>
-                  <p className="mt-2 text-xl font-bold text-[var(--color-navy)]">Country Club, Guadalajara</p>
-                  <p className="mt-1 text-sm text-[var(--color-copy)]">{CONTACT_INFO.address}</p>
-                </div>
-              </div>
+                return (
+                  <div key={card.title} className="flex items-start gap-5">
+                    {content}
+                  </div>
+                );
+              })}
             </div>
-          </div>
+          </Reveal>
 
-          <ContactForm
-            title="Solicita una asesoría"
-            subtitle="La implementación abre WhatsApp y tu cliente de correo con la información capturada para mantener el sitio listo para Vercel sin backend adicional."
-            defaultInterest="Información general"
-          />
+          <Reveal delay={0.1}>
+            <ContactForm />
+          </Reveal>
         </div>
       </section>
 
-      <section className="relative overflow-hidden px-6 pb-24">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[36px]">
-          <div className="relative">
-            <img
-              src={PROJECT_IMAGES.hero}
-              alt="Oficina comercial Condominios Country Club"
-              className="aspect-[16/7] h-full w-full object-cover"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-[rgba(19,30,40,0.35)]" />
-            <div className="absolute inset-x-6 bottom-6 rounded-[28px] bg-white/92 p-6 shadow-xl backdrop-blur-md md:inset-x-auto md:left-10 md:w-[420px]">
-              <p className="editorial-kicker text-[var(--color-accent-deep)]/80">Nuestras oficinas</p>
-              <h3 className="mt-3 font-heading text-3xl font-extrabold text-[var(--color-navy)]">
-                Providencia, Guadalajara, Jalisco
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--color-copy)]">
-                Punto de atención para seguimiento comercial, revisión de materiales y asesoría sobre disponibilidad de Condominios Country Club.
-              </p>
-            </div>
+      <section className="relative isolate overflow-hidden px-6 py-24">
+        <img
+          src={PROJECT_IMAGES.officeBanner}
+          alt="Oficinas Luxent"
+          className="absolute inset-0 h-full w-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-white/28" />
+        <Reveal className="relative z-10 mx-auto flex max-w-[1240px] justify-center">
+          <div className="bg-white px-10 py-8 text-center shadow-[0_24px_70px_rgba(24,38,60,0.16)]">
+            <p className="editorial-kicker text-[var(--color-copy)]/72">NUESTRAS OFICINAS</p>
+            <h2 className="mt-4 font-heading text-[2rem] font-extrabold tracking-[-0.03em] text-[var(--color-heading)] sm:text-[2.5rem]">
+              COUNTRY CLUB, GUADALAJARA, JALISCO
+            </h2>
           </div>
-        </div>
+        </Reveal>
       </section>
     </div>
   );

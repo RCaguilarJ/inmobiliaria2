@@ -12,9 +12,9 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({
-  title = 'Solicita una asesoría',
-  subtitle = 'Compártenos tus datos y prepararemos un seguimiento comercial por WhatsApp y correo.',
-  defaultInterest = 'Información general',
+  title = 'SOLICITA UNA ASESORÍA',
+  subtitle = '',
+  defaultInterest = 'Informacion general',
   customMessage = '',
   surface = 'card',
 }: ContactFormProps) {
@@ -37,21 +37,24 @@ export default function ContactForm({
 
   const openChannels = () => {
     const composedMessage = [
-      'Hola, me interesa recibir información sobre Condominios Country Club.',
+      'Hola, me interesa recibir asesoria de Luxent Properties.',
       '',
       `Nombre: ${formData.name}`,
-      `Teléfono: ${formData.phone}`,
+      `Telefono: ${formData.phone}`,
       `Correo: ${formData.email}`,
-      `Interés: ${formData.interest}`,
+      `Interes: ${formData.interest}`,
       `Mensaje: ${formData.message || 'Sin mensaje adicional.'}`,
     ].join('\n');
 
-    const whatsappUrl = `https://wa.me/523311429932?text=${encodeURIComponent(composedMessage)}`;
+    if (CONTACT_INFO.whatsappHref) {
+      const whatsappUrl = `https://wa.me/523311429932?text=${encodeURIComponent(composedMessage)}`;
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    }
+
     const mailtoUrl = `mailto:${CONTACT_INFO.email}?subject=${encodeURIComponent(
-      `Solicitud de asesoría · ${formData.interest}`,
+      `Solicitud de asesoria · ${formData.interest}`,
     )}&body=${encodeURIComponent(composedMessage)}`;
 
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     window.location.href = mailtoUrl;
   };
 
@@ -79,40 +82,39 @@ export default function ContactForm({
 
   const wrapperClass =
     surface === 'card'
-      ? 'card-shell rounded-[28px] p-6 md:p-8'
+      ? 'rounded-[2px] border border-[var(--color-line)] bg-[var(--color-surface-soft)]/38 p-8 shadow-[0_24px_60px_rgba(25,41,63,0.06)] md:p-10'
       : '';
 
   return (
     <div className={wrapperClass}>
       {submitted ? (
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex flex-col items-start gap-5"
-        >
-          <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-accent-soft)] text-[var(--color-accent-deep)]">
+        <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="space-y-5">
+          <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-accent)]/14 text-[var(--color-accent-strong)]">
             <CheckCircle2 className="h-8 w-8" />
           </div>
           <div>
-            <h3 className="font-heading text-2xl font-bold text-[var(--color-navy)]">Solicitud preparada</h3>
-            <p className="mt-2 text-sm leading-relaxed text-[var(--color-copy)]">
-              Abrimos WhatsApp y tu cliente de correo con la información capturada para continuar el contacto sin necesidad de backend.
+            <h3 className="font-heading text-3xl font-extrabold tracking-[-0.02em] text-[var(--color-navy)]">
+              Solicitud preparada
+            </h3>
+            <p className="mt-3 max-w-[460px] text-sm leading-7 text-[var(--color-copy)]">
+              Abrimos WhatsApp y tu cliente de correo con la informacion capturada para que el seguimiento sea inmediato.
             </p>
           </div>
-
           <div className="flex flex-wrap gap-3">
-            <a
-              href={CONTACT_INFO.whatsappHref}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-5 py-3 text-xs font-bold uppercase tracking-[0.2em] text-white"
-            >
-              <MessageCircle className="h-4 w-4" />
-              WhatsApp
-            </a>
+            {CONTACT_INFO.whatsappHref && (
+              <a
+                href={CONTACT_INFO.whatsappHref}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-[10px] bg-[var(--color-accent-strong)] px-5 py-3 text-sm font-bold text-white"
+              >
+                <MessageCircle className="h-4 w-4" />
+                WhatsApp
+              </a>
+            )}
             <a
               href={`mailto:${CONTACT_INFO.email}`}
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--color-line)] px-5 py-3 text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-navy)]"
+              className="inline-flex items-center gap-2 rounded-[10px] border border-[var(--color-line)] px-5 py-3 text-sm font-bold text-[var(--color-navy)]"
             >
               <Mail className="h-4 w-4" />
               Correo
@@ -120,7 +122,7 @@ export default function ContactForm({
             <button
               type="button"
               onClick={resetForm}
-              className="rounded-full border border-[var(--color-line)] px-5 py-3 text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-copy)]"
+              className="rounded-[10px] border border-[var(--color-line)] px-5 py-3 text-sm font-bold text-[var(--color-copy)]"
             >
               Nueva solicitud
             </button>
@@ -129,12 +131,12 @@ export default function ContactForm({
       ) : (
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="space-y-2">
-            <h3 className="font-heading text-2xl font-bold text-[var(--color-navy)]">{title}</h3>
-            <p className="text-sm leading-relaxed text-[var(--color-copy)]">{subtitle}</p>
+            <h3 className="font-heading text-[2rem] font-extrabold tracking-[-0.02em] text-[var(--color-navy)]">{title}</h3>
+            {subtitle && <p className="max-w-[470px] text-sm leading-7 text-[var(--color-copy)]">{subtitle}</p>}
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="space-y-1.5 text-sm font-medium text-[var(--color-navy)]">
+            <label className="space-y-2 text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--color-copy)]">
               <span>Nombre *</span>
               <input
                 type="text"
@@ -142,10 +144,10 @@ export default function ContactForm({
                 value={formData.name}
                 onChange={(event) => setFormData({ ...formData, name: event.target.value })}
                 placeholder="Tu nombre completo"
-                className="w-full rounded-2xl border border-[var(--color-line)] px-4 py-3 outline-none focus:border-[var(--color-accent)]"
+                className="w-full border border-[var(--color-line)] bg-white px-4 py-4 text-[15px] font-medium text-[var(--color-navy)] outline-none focus:border-[var(--color-accent)]"
               />
             </label>
-            <label className="space-y-1.5 text-sm font-medium text-[var(--color-navy)]">
+            <label className="space-y-2 text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--color-copy)]">
               <span>Teléfono *</span>
               <input
                 type="tel"
@@ -153,12 +155,12 @@ export default function ContactForm({
                 value={formData.phone}
                 onChange={(event) => setFormData({ ...formData, phone: event.target.value })}
                 placeholder="+52 33 0000 0000"
-                className="w-full rounded-2xl border border-[var(--color-line)] px-4 py-3 outline-none focus:border-[var(--color-accent)]"
+                className="w-full border border-[var(--color-line)] bg-white px-4 py-4 text-[15px] font-medium text-[var(--color-navy)] outline-none focus:border-[var(--color-accent)]"
               />
             </label>
           </div>
 
-          <label className="space-y-1.5 text-sm font-medium text-[var(--color-navy)]">
+          <label className="space-y-2 text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--color-copy)]">
             <span>Correo electrónico *</span>
             <input
               type="email"
@@ -166,41 +168,41 @@ export default function ContactForm({
               value={formData.email}
               onChange={(event) => setFormData({ ...formData, email: event.target.value })}
               placeholder="tu@correo.com"
-              className="w-full rounded-2xl border border-[var(--color-line)] px-4 py-3 outline-none focus:border-[var(--color-accent)]"
+              className="w-full border border-[var(--color-line)] bg-white px-4 py-4 text-[15px] font-medium text-[var(--color-navy)] outline-none focus:border-[var(--color-accent)]"
             />
           </label>
 
-          <label className="space-y-1.5 text-sm font-medium text-[var(--color-navy)]">
+          <label className="space-y-2 text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--color-copy)]">
             <span>Tipo de interés</span>
             <div className="relative">
               <select
                 value={formData.interest}
                 onChange={(event) => setFormData({ ...formData, interest: event.target.value })}
-                className="w-full appearance-none rounded-2xl border border-[var(--color-line)] px-4 py-3 outline-none focus:border-[var(--color-accent)]"
+                className="w-full appearance-none border border-[var(--color-line)] bg-white px-4 py-4 text-[15px] font-medium text-[var(--color-navy)] outline-none focus:border-[var(--color-accent)]"
               >
-                <option>Información general</option>
-                <option>Disponibilidad de tipologías</option>
-                <option>Amenidades y recorrido</option>
-                <option>Asesoría comercial Luxent</option>
+                <option>Informacion general</option>
+                <option>Compra o inversion</option>
+                <option>Comercializacion de desarrollo</option>
+                <option>Asesoria personalizada</option>
               </select>
-              <ChevronDown className="pointer-events-none absolute right-4 top-4 h-4 w-4 text-[var(--color-copy)]" />
+              <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--color-copy)]" />
             </div>
           </label>
 
-          <label className="space-y-1.5 text-sm font-medium text-[var(--color-navy)]">
+          <label className="space-y-2 text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--color-copy)]">
             <span>Mensaje</span>
             <textarea
-              rows={4}
+              rows={5}
               value={formData.message}
               onChange={(event) => setFormData({ ...formData, message: event.target.value })}
-              placeholder="Cuéntanos qué deseas revisar o qué etapa de decisión estás evaluando."
-              className="w-full rounded-2xl border border-[var(--color-line)] px-4 py-3 outline-none focus:border-[var(--color-accent)]"
+              placeholder="Cuentanos sobre tu proyecto o necesidad..."
+              className="w-full resize-none border border-[var(--color-line)] bg-white px-4 py-4 text-[15px] font-medium text-[var(--color-navy)] outline-none focus:border-[var(--color-accent)]"
             />
           </label>
 
           <button
             type="submit"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[var(--color-navy)] px-6 py-4 text-xs font-bold uppercase tracking-[0.22em] text-white hover:bg-[var(--color-accent-deep)]"
+            className="inline-flex w-full items-center justify-center gap-2 bg-[var(--color-navy)] px-6 py-4 text-sm font-extrabold uppercase tracking-[0.08em] text-white transition hover:bg-[var(--color-accent-strong)]"
           >
             Enviar solicitud
             <Send className="h-4 w-4" />

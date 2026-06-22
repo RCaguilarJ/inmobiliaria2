@@ -1,22 +1,18 @@
-import { BarChart3, Cpu, Megaphone, ShieldCheck } from 'lucide-react';
+import { BarChart3, Cpu, Megaphone, MonitorSmartphone, ShieldCheck, Users } from 'lucide-react';
 import {
-  ABOUT_DIFFERENTIATORS,
-  ABOUT_PILLARS,
-  PROJECT_GALLERY,
+  ABOUT_PILLS,
+  DIFFERENTIATORS,
+  OBJECTIVE_CARDS,
   PROJECT_IMAGES,
   SITE_COPY,
 } from '../data';
-import type { PagePath } from '../types';
 import PageHero from './PageHero';
-import SectionDivider from './SectionDivider';
+import Reveal from './Reveal';
 
-interface NosotrosViewProps {
-  onNavigate: (path: PagePath) => void;
-}
+const objectiveIcons = [BarChart3, Cpu, Megaphone];
+const differentiatorIcons = [ShieldCheck, MonitorSmartphone, Megaphone, Cpu, Users, BarChart3];
 
-const pillarIcons = [BarChart3, Cpu, Megaphone];
-
-export default function NosotrosView({ onNavigate }: NosotrosViewProps) {
+export default function NosotrosView() {
   return (
     <div>
       <PageHero
@@ -26,134 +22,138 @@ export default function NosotrosView({ onNavigate }: NosotrosViewProps) {
         subtitle={SITE_COPY.about.subtitle}
       />
 
-      <section className="px-6 py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div className="overflow-hidden rounded-[32px]">
+      <section className="bg-white px-6 py-20 sm:py-24">
+        <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
+          <Reveal className="overflow-hidden rounded-[10px] shadow-[0_28px_64px_rgba(26,40,61,0.12)]">
             <img
-              src={PROJECT_IMAGES.living}
-              alt="Interior de Condominios Country Club"
-              className="aspect-[4/3] h-full w-full object-cover"
+              src={PROJECT_IMAGES.aboutFeature}
+              alt="Interior comercializado por Luxent"
+              className="aspect-[1.25] h-full w-full object-cover"
               referrerPolicy="no-referrer"
             />
-          </div>
+          </Reveal>
 
-          <div>
-            <span className="editorial-kicker text-[var(--color-accent-deep)]/80">Luxent + Country Club</span>
-            <h2 className="mt-4 font-heading text-4xl font-extrabold text-[var(--color-navy)] sm:text-5xl">
-              Comercialización enfocada en experiencia, claridad y seguimiento
+          <Reveal delay={0.08}>
+            <h2 className="font-heading text-[2.8rem] font-extrabold tracking-[-0.04em] text-[var(--color-heading)] sm:text-[4rem]">
+              QUIÉNES SOMOS
             </h2>
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-[var(--color-copy)]">
-              <p>
-                El perfil empresarial de Luxent define un enfoque centrado en propiedades exclusivas, atención personalizada, marketing especializado y herramientas digitales para facilitar la compra, venta o comercialización de desarrollos premium.
-              </p>
-              <p>
-                En esta versión, ese mismo marco se aplica a Condominios Country Club: un desarrollo con frente al corredor Country, amenidades integradas y una narrativa comercial respaldada por brochure, galería y material audiovisual real.
-              </p>
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              {['Enfoque innovador', 'Atención personalizada', 'Experiencias únicas', 'Alta gama'].map((label) => (
+            <p className="mt-5 text-base leading-8 text-[var(--color-copy)]">{SITE_COPY.about.description}</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {ABOUT_PILLS.map((pill) => (
                 <span
-                  key={label}
-                  className="rounded-full bg-[var(--color-surface-soft)] px-4 py-2 text-sm font-semibold text-[var(--color-navy)]"
+                  key={pill}
+                  className="rounded-[8px] bg-[var(--color-surface-soft)] px-4 py-2 text-[13px] font-semibold text-[var(--color-copy)]"
                 >
-                  {label}
+                  {pill}
                 </span>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="bg-[var(--color-surface-soft)] px-6 py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <span className="editorial-kicker text-[var(--color-accent-deep)]/80">Nuestro objetivo</span>
-            <h2 className="mt-4 font-heading text-4xl font-extrabold text-[var(--color-navy)] sm:text-5xl">
-              Mercado, tecnología y comunicación en una misma conversación comercial
+      <section className="bg-[var(--color-surface-soft)] px-6 py-20 sm:py-24">
+        <div className="mx-auto max-w-[1240px]">
+          <Reveal className="mx-auto max-w-[760px] text-center">
+            <h2 className="font-heading text-[2.7rem] font-extrabold tracking-[-0.04em] text-[var(--color-heading)] sm:text-[3.9rem]">
+              NUESTRO OBJETIVO
             </h2>
-            <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-[var(--color-copy)]">
-              La metodología integra lectura del mercado inmobiliario, automatización comercial y diseño de comunicación para sostener un proceso de venta más claro y mejor documentado.
-            </p>
-          </div>
+            <p className="mt-5 text-base leading-8 text-[var(--color-copy)]">{SITE_COPY.about.objective}</p>
+          </Reveal>
 
-          <SectionDivider className="mt-8" />
-
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {ABOUT_PILLARS.map((pillar, index) => {
-              const Icon = pillarIcons[index];
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {OBJECTIVE_CARDS.map((card, index) => {
+              const Icon = objectiveIcons[index];
 
               return (
-                <article key={pillar.title} className="card-shell rounded-[28px] p-6">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[var(--color-accent)] shadow-sm">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="mt-6 font-heading text-2xl font-bold text-[var(--color-navy)]">{pillar.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[var(--color-copy)]">{pillar.description}</p>
-                </article>
+                <Reveal key={card.title} delay={index * 0.08}>
+                  <article className="card-shell px-5 py-6 sm:px-7 sm:py-7">
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-[10px] bg-[var(--color-accent-strong)] text-white">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="mt-5 font-heading text-[1.45rem] font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
+                      {card.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-[var(--color-copy)]">{card.description}</p>
+                  </article>
+                </Reveal>
               );
             })}
           </div>
         </div>
       </section>
 
-      <section className="px-6 py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <span className="editorial-kicker text-[var(--color-accent-deep)]/80">Qué nos diferencia</span>
-            <h2 className="mt-4 font-heading text-4xl font-extrabold text-[var(--color-navy)] sm:text-5xl">
-              Criterio comercial y experiencia visual
+      <section className="bg-white px-6 py-20 sm:py-24">
+        <div className="mx-auto max-w-[1240px]">
+          <Reveal className="text-center">
+            <h2 className="font-heading text-[2.7rem] font-extrabold tracking-[-0.04em] text-[var(--color-heading)] sm:text-[3.9rem]">
+              QUÉ NOS DIFERENCIA
             </h2>
-          </div>
+          </Reveal>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {ABOUT_DIFFERENTIATORS.map((item) => (
-              <article key={item.title} className="card-shell rounded-[28px] p-6">
-                <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[var(--color-accent-soft)] text-[var(--color-accent-deep)]">
-                  <ShieldCheck className="h-5 w-5" />
-                </div>
-                <h3 className="mt-6 font-heading text-2xl font-bold text-[var(--color-navy)]">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[var(--color-copy)]">{item.description}</p>
-              </article>
-            ))}
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {DIFFERENTIATORS.map((card, index) => {
+              const Icon = differentiatorIcons[index];
+
+              return (
+                <Reveal key={card.title} delay={index * 0.06}>
+                  <article className="card-shell px-5 py-6 sm:px-7 sm:py-7">
+                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-[var(--color-accent-strong)] text-white">
+                      <Icon className="h-4.5 w-4.5" />
+                    </div>
+                    <h3 className="mt-5 font-heading text-[1.5rem] font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
+                      {card.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-[var(--color-copy)]">{card.description}</p>
+                  </article>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <section className="bg-[var(--color-surface-soft)] px-6 py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
-            <span className="editorial-kicker text-[var(--color-accent-deep)]/80">Infraestructura</span>
-            <h2 className="mt-4 font-heading text-4xl font-extrabold text-[var(--color-navy)] sm:text-5xl">
-              Infraestructura que genera confianza desde la primera visita
+      <section className="bg-[var(--color-surface-soft)] px-6 py-20 sm:py-24">
+        <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[0.84fr_1.16fr] lg:items-center">
+          <Reveal>
+            <h2 className="font-heading text-[2.7rem] font-extrabold leading-[0.96] tracking-[-0.04em] text-[var(--color-heading)] sm:text-[4rem]">
+              INFRAESTRUCTURA
+              <br />
+              QUE GENERA
+              <br />
+              CONFIANZA
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-[var(--color-copy)]">
-              El lobby, los espacios interiores, la terraza con alberca y las vistas abiertas ayudan a sostener una presentación comercial coherente. El objetivo no es solo mostrar un activo, sino construir una percepción de valor clara y consistente.
+            <p className="mt-6 max-w-[420px] text-base leading-8 text-[var(--color-copy)]">
+              {SITE_COPY.about.infrastructure}
             </p>
-            <button
-              type="button"
-              onClick={() => onNavigate('/contacto')}
-              className="mt-8 rounded-full bg-[var(--color-navy)] px-6 py-3 text-xs font-bold uppercase tracking-[0.22em] text-white"
-            >
-              Solicitar recorrido
-            </button>
-          </div>
+          </Reveal>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            {PROJECT_GALLERY.slice(0, 3).map((image, index) => (
-              <figure
-                key={image.caption}
-                className={`overflow-hidden rounded-[28px] ${index === 0 ? 'sm:col-span-2' : ''}`}
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className={`h-full w-full object-cover ${index === 0 ? 'aspect-[16/10]' : 'aspect-[4/5]'}`}
-                  referrerPolicy="no-referrer"
-                />
-              </figure>
-            ))}
-          </div>
+          <Reveal delay={0.08} className="grid gap-4 sm:grid-cols-2">
+            <div className="overflow-hidden rounded-[8px] sm:col-span-2">
+              <img
+                src={PROJECT_IMAGES.galleryWide}
+                alt="Proyecto comercializado por Luxent"
+                className="aspect-[1.66] h-full w-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="overflow-hidden rounded-[8px]">
+              <img
+                src={PROJECT_IMAGES.gallerySmallA}
+                alt="Interior de lujo"
+                className="aspect-[1.05] h-full w-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="overflow-hidden rounded-[8px]">
+              <img
+                src={PROJECT_IMAGES.gallerySmallB}
+                alt="Lobby Luxent"
+                className="aspect-[1.05] h-full w-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </Reveal>
         </div>
       </section>
     </div>

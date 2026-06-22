@@ -1,21 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-heading: "Sora", sans-serif;
+  --font-heading: "Montserrat", sans-serif;
   --font-sans: "Manrope", sans-serif;
 
-  --color-surface: #f5f6f2;
-  --color-surface-soft: #eef1eb;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f5f8fc;
   --color-card: #ffffff;
-  --color-ink: #223042;
-  --color-copy: #5f6d7a;
-  --color-line: #d7ded8;
-  --color-navy: #1f2e3b;
-  --color-navy-strong: #17222d;
-  --color-accent: #0f826d;
-  --color-accent-soft: #dceee7;
-  --color-accent-deep: #0b6555;
+  --color-line: #e5ecf3;
+  --color-copy: #93a0b0;
+  --color-heading: #23344d;
+  --color-navy: #1f2d44;
+  --color-accent: #6f839a;
+  --color-accent-strong: #5f778f;
 }
 
 html {
@@ -23,11 +21,10 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: var(--font-sans);
-  background:
-    radial-gradient(circle at top left, rgba(15, 130, 109, 0.06), transparent 30%),
-    linear-gradient(180deg, #f8f8f4 0%, #f5f6f2 100%);
-  color: var(--color-ink);
+  background: var(--color-surface);
+  color: var(--color-heading);
   overflow-x: hidden;
 }
 
@@ -45,8 +42,8 @@ button {
     color 180ms ease,
     background-color 180ms ease,
     border-color 180ms ease,
-    transform 180ms ease,
-    box-shadow 180ms ease;
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
 
 img {
@@ -55,62 +52,48 @@ img {
 
 .editorial-kicker {
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.24em;
+  font-weight: 800;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
 }
 
 .section-rule {
   height: 1px;
-  width: 72px;
-  background: linear-gradient(90deg, rgba(15, 130, 109, 0.8), rgba(15, 130, 109, 0.1));
+  width: 46px;
+  background: rgba(255, 255, 255, 0.28);
 }
 
 .card-shell {
-  border: 1px solid rgba(215, 222, 216, 0.95);
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow:
-    0 18px 48px rgba(31, 46, 59, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-
-.dark-panel {
-  background:
-    radial-gradient(circle at top left, rgba(15, 130, 109, 0.18), transparent 28%),
-    linear-gradient(180deg, rgba(31, 46, 59, 0.98) 0%, rgba(23, 34, 45, 1) 100%);
-}
-
-.ghost-outline {
-  border: 1px solid rgba(255, 255, 255, 0.26);
-  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--color-line);
+  background: white;
+  box-shadow: 0 24px 60px rgba(26, 40, 61, 0.06);
 }
 
 input,
 select,
 textarea {
-  color: var(--color-ink);
-  background-color: white;
+  border-radius: 0;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: #8a97a4;
+  color: #b1bcc8;
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-surface);
+  background: #eff3f8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-accent);
-  border-radius: 3px;
+  background: #9babbc;
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent-deep);
+  background: #7f92a7;
 }

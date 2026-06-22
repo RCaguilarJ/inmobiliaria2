@@ -1,5 +1,5 @@
-import greenLogo from '../assets/images/CCC_LOGOTIPOS-04.png';
-import whiteLogo from '../assets/images/CCC_LOGOTIPOS-05.png';
+import blueLogo from '../assets/images/luxent-logo-blue-clean.png';
+import whiteLogo from '../assets/images/luxent-logo-white-clean.png';
 
 interface CountryClubLogoProps {
   className?: string;
@@ -7,15 +7,13 @@ interface CountryClubLogoProps {
 }
 
 export default function CountryClubLogo({
-  className = 'w-[200px]',
+  className = 'w-[140px]',
   variant = 'light',
 }: CountryClubLogoProps) {
-  const source = variant === 'dark' ? whiteLogo : greenLogo;
-
   return (
     <img
-      src={source}
-      alt="Condominios Country Club"
+      src={variant === 'dark' ? whiteLogo : blueLogo}
+      alt="Luxent Properties"
       className={className}
       referrerPolicy="no-referrer"
     />

@@ -40,11 +40,11 @@ export default function App() {
   const currentView = useMemo(() => {
     switch (activePath) {
       case '/quienes-somos':
-        return <NosotrosView onNavigate={navigate} />;
+        return <NosotrosView />;
       case '/servicios':
-        return <AlianzasView onNavigate={navigate} />;
+        return <AlianzasView />;
       case '/desarrollos':
-        return <DevelopmentsView onNavigate={navigate} />;
+        return <DevelopmentsView />;
       case '/contacto':
         return <ContactView />;
       case '/':
