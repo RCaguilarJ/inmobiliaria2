@@ -141,7 +141,7 @@ export default function AlianzasView() {
           <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
             {MARKET_STUDIES.map((study, index) => (
               <Reveal key={study.index} delay={index * 0.05}>
-                <article className="border border-[var(--color-line)] bg-white px-4 py-5 shadow-[0_18px_42px_rgba(27,42,62,0.05)]">
+                <article className="group border-2 border-[var(--color-line)] bg-white px-4 py-5 shadow-[0_18px_42px_rgba(27,42,62,0.05)] transition-all duration-300 cursor-pointer hover:border-[var(--color-navy)] hover:shadow-[0_20px_50px_rgba(31,45,68,0.12)]">
                   <div className="flex items-start justify-between gap-3">
                     <BarChart3 className="mt-1 h-5 w-5 text-[var(--color-accent-strong)]" />
                     <span className="font-heading text-[2rem] font-extrabold leading-none text-[var(--color-line)]">{study.index}</span>
