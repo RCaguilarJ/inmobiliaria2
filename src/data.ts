@@ -7,6 +7,7 @@ import poolDeck from './assets/images/countryclub-real/pool-deck.jpg';
 import walkInCloset from './assets/images/countryclub-real/walk-in-closet.jpg';
 import tdpTower from './assets/images/TDP Post foto 1 (1).png';
 import veqCountryClub from './assets/images/veq_countryclub_1781741180731.jpg';
+import fachadaTdpSur from './assets/images/FOTOS FACHADAS TDP SUR.png';
 import veqDevelopmentThumb from './assets/images/veq_development_thumb_1781739550936.jpg';
 import veqHeroTowers from './assets/images/veq_hero_towers_1781739523649.jpg';
 import veqOpera from './assets/images/veq_opera_1781741132258.jpg';
@@ -99,7 +100,7 @@ export const SITE_COPY = {
 } as const;
 
 export const PROJECT_IMAGES: ProjectImageMap = {
-  homeHero: veqDevelopmentThumb,
+  homeHero: fachadaTdpSur,
   homeCta: veqCountryClub,
   aboutHero: veqCountryClub,
   servicesHero: livingRoom,

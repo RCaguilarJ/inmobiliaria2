@@ -62,22 +62,17 @@ export default function AlianzasView() {
           <div className="mt-10 grid overflow-hidden border border-[var(--color-line)] md:grid-cols-2 xl:grid-cols-4">
             {SERVICES_GRID.map((service, index) => {
               const Icon = serviceIcons[index];
-              const active = service.number === '07';
 
               return (
                 <Reveal key={service.number} delay={index * 0.04} y={18}>
-                  <article
-                    className={`feature-card-hover h-full min-h-[320px] border-b border-r border-[var(--color-line)] px-7 py-8 transition-all duration-300 ${
-                      active ? 'bg-[var(--color-accent)] text-white' : 'bg-white cursor-pointer hover:shadow-[0_20px_50px_rgba(26,40,61,0.12)]'
-                    }`}
-                  >
-                    <p className={`text-[11px] font-extrabold tracking-[0.18em] ${active ? 'text-white/60' : 'text-[var(--color-copy)]/50'}`}>
+                  <article className="feature-card-hover group h-full min-h-[320px] border-b border-r border-[var(--color-line)] bg-white px-7 py-8 cursor-pointer transition-all duration-300 hover:shadow-[0_20px_50px_rgba(26,40,61,0.12)]">
+                    <p className="text-[11px] font-extrabold tracking-[0.18em] text-[var(--color-copy)]/50 transition-colors group-hover:text-white/80">
                       {service.number}
                     </p>
-                    <div className={`mt-8 inline-flex h-12 w-12 items-center justify-center rounded-[10px] ${active ? 'bg-white/12 text-white' : 'text-[var(--color-accent-strong)]'}`}>
+                    <div className="mt-8 inline-flex h-12 w-12 items-center justify-center rounded-[10px] border border-[var(--color-line)] text-[var(--color-accent-strong)] transition-colors group-hover:border-white/25 group-hover:text-white">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <h3 className={`mt-6 max-w-[210px] font-heading text-[1.4rem] font-extrabold leading-[1.18] tracking-[-0.03em] ${active ? 'text-white' : 'text-[var(--color-heading)]'}`}>
+                    <h3 className="mt-6 max-w-[210px] font-heading text-[1.4rem] font-extrabold leading-[1.18] tracking-[-0.03em] text-[var(--color-heading)] transition-colors group-hover:text-white">
                       {service.title}
                     </h3>
                   </article>

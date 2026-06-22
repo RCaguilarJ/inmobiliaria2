@@ -35,9 +35,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           className="absolute inset-0 h-full w-full object-cover"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-[rgba(17,27,40,0.44)]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(14,24,38,0.72)] via-[rgba(14,24,38,0.42)] to-[rgba(14,24,38,0.12)]" />
-        <div className="absolute inset-x-0 top-0 h-[180px] bg-gradient-to-b from-[rgba(8,16,28,0.28)] to-transparent" />
+        <div className="absolute inset-0 bg-[rgba(15,25,40,0.38)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(12,22,36,0.65)] via-[rgba(12,22,36,0.36)] to-[rgba(12,22,36,0.08)]" />
+        <div className="absolute inset-x-0 top-0 h-[180px] bg-gradient-to-b from-[rgba(6,14,26,0.24)] to-transparent" />
 
         <div className="relative z-10 mx-auto flex min-h-screen max-w-[1240px] flex-col justify-between px-5 lg:px-8">
           <motion.div
