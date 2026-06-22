@@ -1,18 +1,13 @@
 import balconyView from './assets/images/countryclub-real/balcony-view.jpg';
-import bedroomSuite from './assets/images/countryclub-real/bedroom-suite.jpg';
 import livingRoom from './assets/images/countryclub-real/living-room.jpg';
 import lobbyChandelier from './assets/images/countryclub-real/lobby-chandelier-wide.jpg';
 import lobbyLounge from './assets/images/countryclub-real/lobby-lounge.jpg';
 import poolDeck from './assets/images/countryclub-real/pool-deck.jpg';
-import walkInCloset from './assets/images/countryclub-real/walk-in-closet.jpg';
 import tdpTower from './assets/images/TDP Post foto 1 (1).png';
 import veqCountryClub from './assets/images/veq_countryclub_1781741180731.jpg';
-import fachadaTdpSur from './assets/images/FOTOS FACHADAS TDP SUR.png';
-import veqDevelopmentThumb from './assets/images/veq_development_thumb_1781739550936.jpg';
+import travesseraDay from './assets/images/FOTOS/TVS CARRUSEL ENERO 1.png';
 import veqHeroTowers from './assets/images/veq_hero_towers_1781739523649.jpg';
 import veqOpera from './assets/images/veq_opera_1781741132258.jpg';
-import veqPaseo from './assets/images/veq_paseodegracia_1781741234147.jpg';
-import veqTorre from './assets/images/veq_torredelprado_1781741156146.jpg';
 import type {
   ContactCard,
   ContactInfo,
@@ -37,7 +32,7 @@ export const ROUTES: Record<string, PagePath> = {
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Inicio', path: '/' },
-  { label: 'Quiénes somos', path: '/quienes-somos' },
+  { label: 'Quienes somos', path: '/quienes-somos' },
   { label: 'Servicios', path: '/servicios' },
   { label: 'Desarrollos', path: '/desarrollos' },
   { label: 'Contacto', path: '/contacto' },
@@ -47,7 +42,7 @@ export const CONTACT_INFO: ContactInfo = {
   phoneDisplay: '33 1142 9932',
   phoneHref: 'tel:+523311429932',
   email: 'gerencia@luxent.properties',
-  address: 'Av. Américas 1930-PB, Country Club, Guadalajara, Jalisco, C.P. 44668.',
+  address: 'Av. Americas 1930-PB, Country Club, Guadalajara, Jalisco, C.P. 44668.',
   officeHours: 'Lun - Vie: 9:00 - 19:00',
   whatsappHref:
     'https://wa.me/523311429932?text=Hola,%20quiero%20informacion%20sobre%20Luxent%20Properties.',
@@ -67,7 +62,7 @@ export const SITE_COPY = {
       'Conecta con Luxent Properties y descubre una nueva forma de presentar, posicionar y vender desarrollos inmobiliarios.',
   },
   about: {
-    eyebrow: 'Quiénes somos',
+    eyebrow: 'Quienes somos',
     title: 'LIDERES EN BIENES RAICES DE LUJO',
     subtitle: 'Una empresa nacida en Guadalajara con vision global y compromiso local.',
     description:
@@ -87,10 +82,10 @@ export const SITE_COPY = {
     eyebrow: 'Portafolio',
     title: 'DESARROLLOS DESTACADOS',
     subtitle:
-      'Proyectos inmobiliarios que definen el estandar de lujo en la Zona Metropolitana de Guadalajara.',
+      'Proyectos inmobiliarios reales del portafolio Luxent, presentados con una ficha comercial clara y accionable.',
   },
   contact: {
-    eyebrow: 'Contáctanos',
+    eyebrow: 'Contactanos',
     title: 'HAGAMOS REALIDAD TU PROYECTO',
     subtitle:
       'Nuestro equipo de especialistas esta listo para asesorarte en tu proxima inversion inmobiliaria.',
@@ -100,9 +95,9 @@ export const SITE_COPY = {
 } as const;
 
 export const PROJECT_IMAGES: ProjectImageMap = {
-  homeHero: fachadaTdpSur,
+  homeHero: poolDeck,
   homeCta: veqCountryClub,
-  aboutHero: veqCountryClub,
+  aboutHero: veqHeroTowers,
   servicesHero: livingRoom,
   developmentsHero: balconyView,
   contactHero: lobbyLounge,
@@ -125,7 +120,7 @@ export const HOME_FEATURE_CARDS: FeatureCard[] = [
     badge: '+40 DESARROLLOS',
     title: 'DESARROLLOS PREMIUM',
     description:
-      'Comercializamos proyectos alto nivel en las zonas mas exclusivas de Guadalajara.',
+      'Comercializamos proyectos de alto nivel en las zonas mas exclusivas de Guadalajara.',
     linkLabel: 'VER MAS',
   },
   {
@@ -144,7 +139,7 @@ export const HOME_FEATURE_CARDS: FeatureCard[] = [
   },
   {
     badge: 'FULL SERVICE',
-    title: 'ACOMPAÑAMIENTO TOTAL',
+    title: 'ACOMPANAMIENTO TOTAL',
     description:
       'Seguimiento comercial, visual y operativo para que cada cliente avance con total tranquilidad.',
     linkLabel: 'VER MAS',
@@ -188,10 +183,10 @@ export const DIFFERENTIATORS: FeatureCard[] = [
   {
     title: 'Marketing especializado',
     description:
-      'Campañas personalizadas para posicionar cada propiedad con estrategia, contenido y pauta digital.',
+      'Campanas personalizadas para posicionar cada propiedad con estrategia, contenido y pauta digital.',
   },
   {
-    title: 'Diseño de vanguardia',
+    title: 'Diseno de vanguardia',
     description:
       'Presentaciones visuales, renders, brochures, recorridos virtuales y materiales comerciales sofisticados.',
   },
@@ -210,12 +205,12 @@ export const DIFFERENTIATORS: FeatureCard[] = [
 export const SERVICES_GRID: ServiceTile[] = [
   { number: '01', title: 'Venta y alquiler de propiedades de lujo' },
   { number: '02', title: 'Asesoria personalizada para clientes de alto perfil' },
-  { number: '03', title: 'Campañas de marketing digital inmobiliario' },
+  { number: '03', title: 'Campanas de marketing digital inmobiliario' },
   { number: '04', title: 'Tours virtuales, renders y fotografia profesional' },
   { number: '05', title: 'Consultoria de inversiones inmobiliarias' },
   { number: '06', title: 'Gestion y posicionamiento en redes sociales' },
   { number: '07', title: 'Brochures digitales y presentaciones comerciales' },
-  { number: '08', title: 'Acompañamiento juridico y postventa' },
+  { number: '08', title: 'Acompanamiento juridico y postventa' },
 ];
 
 export const TOOL_GROUPS: ListCard[] = [
@@ -291,114 +286,177 @@ export const LEGAL_SUPPORT = [
 
 export const DEVELOPMENT_FILTERS = [
   'Todos',
-  'Residencial',
-  'Comercial',
   'En desarrollo',
   'Entrega inmediata',
-  'Premium',
+  'Vertical',
+  'Horizontal',
+  'Residencial',
 ];
 
 export const DEVELOPMENT_PROJECTS: DevelopmentProject[] = [
   {
-    name: 'Ópera',
-    location: 'Guadalajara, Jalisco',
-    category: 'Residencial Premium',
-    status: 'Premium',
-    description:
-      'Desarrollo residencial de lujo con amenidades exclusivas y acabados de primera clase en el corazon de Guadalajara.',
-    image: veqOpera,
-  },
-  {
-    name: 'Torre del Prado',
-    location: 'Zapopan, Jalisco',
-    category: 'Torre Residencial',
-    status: 'Residencial',
-    description:
-      'Torre residencial moderna con vista panoramica y ubicacion privilegiada en la zona mas cotizada de Zapopan.',
-    image: tdpTower,
-  },
-  {
     name: 'Condominios Country Club',
     location: 'Country Club, Guadalajara',
-    category: 'Condominios de Lujo',
-    status: 'Entrega inmediata',
+    category: 'Desarrollo vertical',
+    status: 'Entrega Julio 2026',
     description:
-      'Condominios exclusivos en la zona mas prestigiosa de Guadalajara, listos para habitar.',
-    image: livingRoom,
+      'Proyecto residencial concebido alrededor de vistas directas al campo de golf, con arquitectura orientada a privilegiar paisaje, amplitud y privacidad.',
+    image: balconyView,
+    filters: ['Vertical', 'Residencial'],
+    ribbon: 'ENTREGA JULIO 2026',
+    detailReady: true,
+    overview: [
+      'Un proyecto residencial concebido alrededor de vistas directas e inigualables al campo de golf del Country Club, donde la arquitectura se orienta a privilegiar paisaje, amplitud y privacidad.',
+      'Una propuesta unica por ubicacion, imposible de replicar.',
+    ],
+    idealFor: [
+      'Personas que desean vivir frente al campo de golf, con vistas abiertas que brindan tranquilidad y una conexion directa con el entorno verde.',
+      'Compradores que buscan departamentos con verdadera amplitud, en una zona donde la oferta reciente ha reducido metrajes; aqui el espacio, las alturas y la sensacion de hogar marcan la diferencia.',
+      'Familias que quieren habitar una ubicacion iconica de la ciudad, combinando privacidad, paisaje abierto y un estilo de vida urbano de alto nivel.',
+      'Inversionistas que entienden el valor de un producto dificil de replicar por su ubicacion, sus vistas privilegiadas y sus cualidades arquitectonicas, favoreciendo su permanencia y valor en el tiempo.',
+    ],
+    composition: [
+      'Desarrollo vertical integrado por 2 torres de 33 niveles con 113 departamentos totales.',
+      'Tipologias de 2 y 3 recamaras desde 112.56 m2 hasta 217.81 m2.',
+      'Metrajes amplios y distribuciones pensadas para una experiencia residencial mas comoda y generosa.',
+    ],
+    deliveries: ['Entrega estimada: Julio 2026.'],
+    closing:
+      'Condominios Country Club se adapta a ti, ofreciendote esquemas de pago y tiempos de entrega flexibles, pensados en lo que hoy necesitas.',
   },
   {
-    name: 'Travessera',
-    location: 'Providencia, Guadalajara',
-    category: 'Desarrollo Mixto',
-    status: 'En desarrollo',
+    name: 'Opera',
+    location: 'Las Lomas, Guadalajara',
+    category: 'Residencial premium',
+    status: 'Entrega inmediata',
     description:
-      'Proyecto de usos mixtos con espacios comerciales y residencias premium en Providencia.',
-    image: veqPaseo,
+      'Desarrollo vertical contemporaneo en Las Lomas que combina ubicacion estrategica, amplitud y privacidad en un proyecto pensado para la vida actual.',
+    image: veqOpera,
+    filters: ['Vertical', 'Residencial', 'Entrega inmediata'],
+    ribbon: 'ENTREGA INMEDIATA • ENTREGA INMEDIATA',
+    detailReady: true,
+    overview: [
+      'Opera es un desarrollo vertical contemporaneo en Las Lomas que combina ubicacion estrategica, amplitud y privacidad en un proyecto pensado para la vida actual.',
+      'Una propuesta solida para quienes buscan habitar o invertir en una zona consolidada con conectividad inmediata y proyeccion patrimonial.',
+    ],
+    idealFor: [
+      'Familias que desean mejorar ubicacion sin salir de su entorno.',
+      'Profesionales consolidados que priorizan calidad de vida y cercania urbana.',
+      'Compradores patrimoniales que buscan certeza en tiempos de entrega.',
+      'Inversionistas que valoran producto nuevo con alta demanda potencial.',
+    ],
+    composition: [
+      'Torre Poniente: 33 niveles | 120 departamentos.',
+      'Torre Central: 23 niveles | 46 departamentos.',
+      'Torre Oriente: 13 niveles | 26 departamentos.',
+      'Total: 192 departamentos.',
+    ],
+    deliveries: [
+      'Torre Oriente: Entrega inmediata.',
+      'Torre Central: Mayo 2026.',
+      'Torre Poniente: Julio 2026.',
+    ],
+    closing:
+      'Opera se adapta a ti, ofreciendote esquemas de pago y tiempos de entrega flexibles, pensados en lo que hoy necesitas.',
   },
   {
     name: 'Paseo de Gracia',
-    location: 'Puerta de Hierro, Zapopan',
-    category: 'Corporativo Premium',
-    status: 'Premium',
-    description:
-      'Oficinas corporativas de alto nivel con tecnologia de vanguardia en el exclusivo corredor de Puerta de Hierro.',
-    image: veqCountryClub,
-  },
-  {
-    name: 'Residencial Alterra',
-    location: 'Guadalajara, Jalisco',
-    category: 'Residencial con Amenidades',
-    status: 'Residencial',
-    description:
-      'Residencial con alberca infinita, gimnasio boutique y extensas areas verdes en entorno natural privilegiado.',
-    image: bedroomSuite,
-  },
-  {
-    name: 'Distrito Midtown',
-    location: 'Guadalajara, Jalisco',
-    category: 'Desarrollo Mixto Premium',
+    location: 'Av. Paseo de Gracia, Guadalajara',
+    category: 'Condominio horizontal',
     status: 'En desarrollo',
     description:
-      'Nuevo concepto de vida urbana que integra residencias, comercio, oficinas y espacios de esparcimiento.',
-    image: veqHeroTowers,
+      'Proyecto contemplado dentro del portafolio real de Luxent. La ficha comercial detallada esta en preparacion.',
+    image: veqCountryClub,
+    filters: ['Horizontal', 'En desarrollo'],
+    detailReady: false,
   },
   {
-    name: 'Puerta Verde',
-    location: 'Tlaquepaque, Jalisco',
-    category: 'Residencial',
-    status: 'Residencial',
+    name: 'Torre del Prado',
+    location: 'Las Lomas, Zapopan',
+    category: 'Torre residencial',
+    status: 'Entrega inmediata',
     description:
-      'Fraccionamiento residencial con concepto sustentable y diseño bioclimatico, en armonia con el entorno natural.',
-    image: veqDevelopmentThumb,
+      'Desarrollo residencial terminado que ofrece conectividad inmediata, espacios funcionales y una experiencia urbana lista para habitar desde hoy.',
+    image: tdpTower,
+    filters: ['Vertical', 'Residencial', 'Entrega inmediata'],
+    ribbon: 'ENTREGA INMEDIATA • ENTREGA INMEDIATA',
+    detailReady: true,
+    overview: [
+      'Torre del Prado es un desarrollo residencial terminado en Las Lomas que ofrece conectividad inmediata, espacios funcionales y una experiencia urbana lista para habitar desde hoy.',
+      'Una opcion solida para quienes buscan resolver ubicacion y calidad de vida sin tiempos de espera.',
+    ],
+    idealFor: [
+      'Compradores que buscan generar retorno de inversion desde el primer momento, sin tiempos de espera.',
+      'Clientes que quieren estar en el epicentro del Mundial y los eventos internacionales, aprovechando la alta demanda en una de las zonas mas exclusivas de la ciudad.',
+      'Familias que priorizan la practicidad, ubicacion estrategica y vida diaria resuelta.',
+      'Inversionistas que valoran certeza patrimonial en un desarrollo terminado, escriturable y listo para operar.',
+    ],
+    composition: [
+      'Proyecto vertical resuelto en una sola torre residencial.',
+      '17 niveles habitacionales.',
+      'Roof con amenidades.',
+      '107 unidades totales.',
+      'Disenado para ofrecer eficiencia espacial y operacion inmediata.',
+    ],
+    closing:
+      'Torre del Prado se adapta a ti, ofreciendote esquemas de pago y tiempos de entrega flexibles, pensados en lo que hoy necesitas.',
+  },
+  {
+    name: 'Travessera',
+    location: 'Av. Paseo de Gracia, Guadalajara',
+    category: 'Condominio horizontal',
+    status: 'En desarrollo',
+    description:
+      'Condominio residencial planeado para quienes desean construir su hogar dentro de un entorno natural, privado y cuidadosamente disenado.',
+    image: travesseraDay,
+    filters: ['Horizontal', 'En desarrollo'],
+    ribbon: 'ENTREGA INMEDIATA • ENTREGA INMEDIATA',
+    detailReady: true,
+    overview: [
+      'Travessera es un condominio residencial planeado para quienes desean construir su hogar dentro de un entorno natural, privado y cuidadosamente disenado.',
+      'Una propuesta que privilegia comunidad, paisaje y desarrollo patrimonial a largo plazo.',
+    ],
+    idealFor: [
+      'Familias que desean construir una residencia a su medida en terrenos amplios.',
+      'Personas que buscan exclusividad, privacidad y un entorno de menor concentracion habitacional, altamente arbolado, con mas de 323 arboles maduros que dan caracter, sombra y vida al proyecto.',
+      'Compradores que quieren consolidar un legado patrimonial en un espacio que trasciende en el tiempo.',
+      'Quienes buscan una comunidad residencial planificada, con mayor tranquilidad y un entorno mas privado frente al ritmo de la vida vertical.',
+    ],
+    composition: [
+      '47 exclusivos lotes en venta con trazo urbano integral.',
+      'Lago central y parque lineal que estructuran la vida comunitaria.',
+    ],
+    closing:
+      'Travessera se adapta a ti, ofreciendote esquemas de pago y tiempos de entrega flexibles, pensados en lo que hoy necesitas.',
   },
 ];
 
 export const CONTACT_CARDS: ContactCard[] = [
   {
-    title: 'Teléfono',
+    title: 'Telefono',
     value: '+52 (33) 1142-9932',
     caption: 'Lunes a viernes, 9am - 7pm',
     href: 'tel:+523311429932',
   },
   {
-    title: 'Correo electrónico',
+    title: 'Correo electronico',
     value: 'gerencia@luxent.properties',
     caption: 'Respondemos en menos de 24 horas',
     href: 'mailto:gerencia@luxent.properties',
   },
   {
     title: 'Oficinas',
-    value: 'Av. Américas 1930-PB, Country Club, Guadalajara, Jalisco',
+    value: 'Av. Americas 1930-PB, Country Club, Guadalajara, Jalisco',
     caption: 'C.P. 44668',
   },
   {
-    title: 'Horario de atención',
+    title: 'Horario de atencion',
     value: 'Lun - Vie: 9:00 - 19:00',
     caption: 'Atencion comercial y seguimiento programado',
   },
 ];
 
 export const FOOTER_COPY = {
-  tagline: 'Propiedades exclusivas para un nuevo estándar de vida',
+  tagline: 'Propiedades exclusivas para un nuevo estandar de vida',
   copyright: '© 2026 Luxent Properties. Todos los derechos reservados.',
 };

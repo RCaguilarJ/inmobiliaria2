@@ -31,17 +31,17 @@ export default function ContactView() {
                 const Icon = icons[index];
                 const content = (
                   <>
-                    <div className="inline-flex h-12 w-12 items-center justify-center border border-[var(--color-line)] text-[var(--color-accent-strong)]">
-                      <Icon className="h-5 w-5" />
+                    <div className="inline-flex h-11 w-11 items-center justify-center border border-[var(--color-line)] text-[var(--color-accent-strong)]">
+                      <Icon className="h-[1.15rem] w-[1.15rem]" />
                     </div>
                     <div>
-                      <p className="text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--color-copy)]">
+                      <p className="text-[0.72rem] font-extrabold uppercase tracking-[0.14em] text-[var(--color-copy)]/82">
                         {card.title}
                       </p>
-                      <p className="mt-2 text-[1.95rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-[var(--color-heading)]">
+                      <p className="mt-2 text-[1.2rem] font-bold leading-[1.2] tracking-[-0.025em] text-[var(--color-heading)] sm:text-[1.45rem] lg:text-[1.62rem]">
                         {card.value}
                       </p>
-                      <p className="mt-1 text-sm leading-7 text-[var(--color-copy)]">{card.caption}</p>
+                      <p className="mt-1 text-[0.94rem] leading-6 text-[var(--color-copy)]/82">{card.caption}</p>
                     </div>
                   </>
                 );

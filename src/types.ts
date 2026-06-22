@@ -44,6 +44,14 @@ export interface DevelopmentProject {
   status: string;
   description: string;
   image: string;
+  filters?: string[];
+  ribbon?: string;
+  detailReady?: boolean;
+  overview?: string[];
+  idealFor?: string[];
+  composition?: string[];
+  deliveries?: string[];
+  closing?: string;
 }
 
 export interface ContactCard {
