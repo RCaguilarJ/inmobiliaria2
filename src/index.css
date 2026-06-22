@@ -67,7 +67,69 @@ img {
   border: 1px solid var(--color-line);
   background: white;
   box-shadow: 0 24px 60px rgba(26, 40, 61, 0.06);
+  min-height: 320px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+.feature-card-hover {
+  position: relative;
+  overflow: hidden;
+  background: white;
+  min-height: 320px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.feature-card-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #5f778f;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 300ms ease, transform 300ms ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.feature-card-hover:hover {
+  transform: translateY(-2px);
+}
+
+.feature-card-hover:hover::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.feature-card-hover > *,
+.card-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+.feature-card-hover:hover span,
+.feature-card-hover:hover h3,
+.feature-card-hover:hover p,
+.feature-card-hover:hover button {
+  color: white !important;
+}
+
+.feature-card-hover:hover .feature-card-icon {
+  border-color: rgba(255,255,255,0.25) !important;
+  color: white !important;
+  background: rgba(255,255,255,0.12);
+}
+
+.feature-card-hover:hover .feature-card-icon svg {
+  stroke: white !important;
+}
+
 
 input,
 select,

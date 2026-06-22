@@ -28,7 +28,7 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
         return;
       }
 
-      const threshold = Math.max(0, hero.offsetHeight - 96);
+      const threshold = Math.max(0, hero.offsetHeight - 20);
       setIsHomeHeroActive(window.scrollY < threshold);
     };
 
@@ -52,18 +52,18 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
   return (
     <header className="fixed inset-x-0 top-0 z-50 transition-all duration-300">
       {useTransparentHeader ? (
-        <div className="bg-[rgba(35,55,85,0.8)] backdrop-blur-[12px]">
-          <div className="mx-auto flex h-14 max-w-[1920px] items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="bg-[rgba(8,16,30,0.18)] backdrop-blur-2xl">
+          <div className="mx-auto flex h-[78px] max-w-[1240px] items-center justify-between px-5 lg:px-8">
             <button
               type="button"
               onClick={() => handleNav('/')}
               aria-label="Ir al inicio"
               className="shrink-0"
             >
-              <CountryClubLogo variant="dark" className="w-[88px] sm:w-[96px]" />
+              <CountryClubLogo variant="dark" className="w-24 sm:w-28" />
             </button>
 
-            <nav className="hidden flex-1 items-center justify-center gap-10 lg:flex">
+            <nav className="hidden flex-1 items-center justify-center gap-12 lg:flex">
               {NAV_ITEMS.map((item) => {
                 const active = item.path === activePath;
                 return (
@@ -71,8 +71,8 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
                     key={item.path}
                     type="button"
                     onClick={() => handleNav(item.path)}
-                    className={`whitespace-nowrap text-[12px] font-semibold tracking-[0.01em] transition-colors ${
-                      active ? 'text-white/60' : 'text-white/80 hover:text-white'
+                    className={`whitespace-nowrap text-sm font-semibold tracking-[0.03em] transition-colors ${
+                      active ? 'text-white' : 'text-white/80 hover:text-white'
                     }`}
                   >
                     {item.label}
@@ -85,7 +85,7 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
               <button
                 type="button"
                 onClick={() => handleNav('/contacto')}
-                className="shrink-0 rounded-[8px] bg-[#87a3b8] px-4 py-2 text-[11px] font-bold text-white shadow-[0_4px_12px_rgba(20,31,49,0.25)] transition-colors hover:bg-[#98b3c8]"
+                className="shrink-0 rounded-full bg-[var(--color-navy)] px-8 py-3 text-sm font-semibold text-white shadow-[0_14px_40px_rgba(15,28,45,0.24)] transition-colors hover:bg-[#1d2b46]"
               >
                 Agendar asesoria
               </button>
@@ -95,7 +95,7 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
               <button
                 type="button"
                 onClick={() => setIsOpen((current) => !current)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 bg-white/10 text-white backdrop-blur-[2px] transition-colors hover:bg-white/15"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white shadow-sm backdrop-blur-2xl transition-colors hover:bg-white/20"
                 aria-label="Abrir menu"
               >
                 {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -104,13 +104,13 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
           </div>
         </div>
       ) : (
-        <div className="border-b border-white/65 bg-white/94 backdrop-blur-xl">
-          <div className="mx-auto flex h-[74px] max-w-[1240px] items-center justify-between px-5 lg:px-8">
+        <div className="border-b border-slate-200 bg-white shadow-[0_15px_40px_rgba(15,23,42,0.08)]">
+          <div className="mx-auto flex h-[78px] max-w-[1240px] items-center justify-between px-5 lg:px-8">
             <button type="button" onClick={() => handleNav('/')} aria-label="Ir al inicio" className="shrink-0">
               <CountryClubLogo variant="light" className="w-[104px] sm:w-[118px]" />
             </button>
 
-            <nav className="hidden items-center gap-8 lg:flex">
+            <nav className="hidden items-center gap-10 lg:flex">
               {NAV_ITEMS.map((item) => {
                 const active = item.path === activePath;
                 return (
@@ -134,7 +134,7 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
               <button
                 type="button"
                 onClick={() => handleNav('/contacto')}
-                className="rounded-[10px] bg-[var(--color-accent-strong)] px-5 py-3 text-[13px] font-bold text-white shadow-[0_10px_24px_rgba(33,51,77,0.18)]"
+                className="rounded-[14px] bg-[var(--color-accent-strong)] px-6 py-3 text-[13px] font-bold text-white shadow-[0_14px_36px_rgba(33,51,77,0.18)]"
               >
                 Agendar asesoria
               </button>
@@ -143,7 +143,7 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
             <button
               type="button"
               onClick={() => setIsOpen((current) => !current)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--color-line)] text-[var(--color-navy)] lg:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-line)] text-[var(--color-navy)] lg:hidden"
               aria-label="Abrir menu"
             >
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

@@ -67,7 +67,7 @@ export default function NosotrosView() {
 
               return (
                 <Reveal key={card.title} delay={index * 0.08}>
-                  <article className="card-shell px-5 py-6 sm:px-7 sm:py-7">
+                  <article className="card-shell h-full px-5 py-6 sm:px-7 sm:py-7">
                     <div className="inline-flex h-12 w-12 items-center justify-center rounded-[10px] bg-[var(--color-accent-strong)] text-white">
                       <Icon className="h-5 w-5" />
                     </div>
@@ -97,9 +97,9 @@ export default function NosotrosView() {
 
               return (
                 <Reveal key={card.title} delay={index * 0.06}>
-                  <article className="card-shell px-5 py-6 sm:px-7 sm:py-7">
-                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-[var(--color-accent-strong)] text-white">
-                      <Icon className="h-4.5 w-4.5" />
+                  <article className="card-shell h-full px-5 py-6 sm:px-7 sm:py-7">
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-[10px] bg-[var(--color-accent-strong)] text-white">
+                      <Icon className="h-5 w-5" />
                     </div>
                     <h3 className="mt-5 font-heading text-[1.5rem] font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
                       {card.title}

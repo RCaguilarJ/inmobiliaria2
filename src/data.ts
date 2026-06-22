@@ -101,7 +101,7 @@ export const SITE_COPY = {
 export const PROJECT_IMAGES: ProjectImageMap = {
   homeHero: veqDevelopmentThumb,
   homeCta: veqCountryClub,
-  aboutHero: veqHeroTowers,
+  aboutHero: veqCountryClub,
   servicesHero: livingRoom,
   developmentsHero: balconyView,
   contactHero: lobbyLounge,

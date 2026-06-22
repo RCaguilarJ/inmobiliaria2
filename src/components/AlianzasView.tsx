@@ -67,8 +67,8 @@ export default function AlianzasView() {
               return (
                 <Reveal key={service.number} delay={index * 0.04} y={18}>
                   <article
-                    className={`min-h-[190px] border-b border-r border-[var(--color-line)] px-7 py-8 ${
-                      active ? 'bg-[var(--color-accent)] text-white' : 'bg-white'
+                    className={`feature-card-hover h-full min-h-[320px] border-b border-r border-[var(--color-line)] px-7 py-8 transition-all duration-300 ${
+                      active ? 'bg-[var(--color-accent)] text-white' : 'bg-white cursor-pointer hover:shadow-[0_20px_50px_rgba(26,40,61,0.12)]'
                     }`}
                   >
                     <p className={`text-[11px] font-extrabold tracking-[0.18em] ${active ? 'text-white/60' : 'text-[var(--color-copy)]/50'}`}>
@@ -107,7 +107,7 @@ export default function AlianzasView() {
 
               return (
                 <Reveal key={group.title} delay={index * 0.08}>
-                  <article className="card-shell px-5 py-6 sm:px-7 sm:py-7">
+                  <article className="card-shell h-full px-5 py-6 sm:px-7 sm:py-7">
                     <div className="inline-flex h-12 w-12 items-center justify-center rounded-[10px] bg-[var(--color-accent-strong)] text-white">
                       <Icon className="h-5 w-5" />
                     </div>
