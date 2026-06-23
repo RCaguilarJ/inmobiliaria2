@@ -1,13 +1,13 @@
 import balconyView from './assets/images/countryclub-real/balcony-view.jpg';
+import bedroomSuite from './assets/images/countryclub-real/bedroom-suite.jpg';
 import livingRoom from './assets/images/countryclub-real/living-room.jpg';
 import lobbyChandelier from './assets/images/countryclub-real/lobby-chandelier-wide.jpg';
 import lobbyLounge from './assets/images/countryclub-real/lobby-lounge.jpg';
 import poolDeck from './assets/images/countryclub-real/pool-deck.jpg';
 import tdpTower from './assets/images/TDP Post foto 1 (1).png';
-import veqCountryClub from './assets/images/veq_countryclub_1781741180731.jpg';
+import paseoGrounds from './assets/images/FOTOS/WhatsApp Image 2026-01-29 at 11.55.08 AM.jpeg';
 import travesseraDay from './assets/images/FOTOS/TVS CARRUSEL ENERO 1.png';
-import veqHeroTowers from './assets/images/veq_hero_towers_1781739523649.jpg';
-import veqOpera from './assets/images/veq_opera_1781741132258.jpg';
+import tdpFacadeNorth from './assets/images/real-selected/tdp-facade-north.jpg';
 import type {
   ContactCard,
   ContactInfo,
@@ -96,16 +96,16 @@ export const SITE_COPY = {
 
 export const PROJECT_IMAGES: ProjectImageMap = {
   homeHero: poolDeck,
-  homeCta: veqCountryClub,
-  aboutHero: veqHeroTowers,
+  homeCta: tdpFacadeNorth,
+  aboutHero: tdpFacadeNorth,
   servicesHero: livingRoom,
   developmentsHero: balconyView,
   contactHero: lobbyLounge,
   aboutFeature: lobbyLounge,
-  galleryWide: veqCountryClub,
+  galleryWide: balconyView,
   gallerySmallA: livingRoom,
   gallerySmallB: lobbyChandelier,
-  officeBanner: veqHeroTowers,
+  officeBanner: tdpFacadeNorth,
 };
 
 export const HERO_FEATURES: HeroFeature[] = [
@@ -331,7 +331,7 @@ export const DEVELOPMENT_PROJECTS: DevelopmentProject[] = [
     status: 'Entrega inmediata',
     description:
       'Desarrollo vertical contemporaneo en Las Lomas que combina ubicacion estrategica, amplitud y privacidad en un proyecto pensado para la vida actual.',
-    image: veqOpera,
+    image: bedroomSuite,
     filters: ['Vertical', 'Residencial', 'Entrega inmediata'],
     ribbon: 'ENTREGA INMEDIATA • ENTREGA INMEDIATA',
     detailReady: true,
@@ -366,7 +366,7 @@ export const DEVELOPMENT_PROJECTS: DevelopmentProject[] = [
     status: 'En desarrollo',
     description:
       'Proyecto contemplado dentro del portafolio real de Luxent. La ficha comercial detallada esta en preparacion.',
-    image: veqCountryClub,
+    image: paseoGrounds,
     filters: ['Horizontal', 'En desarrollo'],
     detailReady: false,
   },
