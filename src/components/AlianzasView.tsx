@@ -3,12 +3,12 @@ import {
   BriefcaseBusiness,
   Camera,
   FileBadge2,
-  Gavel,
   Megaphone,
   Network,
   ScrollText,
   Users,
 } from 'lucide-react';
+import contractIllustration from '../assets/images/contract-illustration.svg';
 import {
   LEGAL_SUPPORT,
   MARKET_STUDIES,
@@ -27,8 +27,8 @@ const serviceIcons = [
   Camera,
   BarChart3,
   Network,
+  FileBadge2,
   ScrollText,
-  Gavel,
 ];
 const toolIcons = [FileBadge2, BarChart3, Users];
 
@@ -53,7 +53,8 @@ export default function AlianzasView() {
               </h2>
             </div>
             <p className="max-w-[360px] text-sm leading-7 text-[var(--color-copy)]">
-              Cobertura integral del ciclo inmobiliario: desde la estrategia inicial hasta el cierre y la postventa.
+              Cobertura integral del ciclo inmobiliario: desde la estrategia inicial hasta el
+              cierre y la postventa.
             </p>
           </Reveal>
 
@@ -65,14 +66,14 @@ export default function AlianzasView() {
 
               return (
                 <Reveal key={service.number} delay={index * 0.04} y={18}>
-                  <article className="feature-card-hover group h-full min-h-[320px] border-b border-r border-[var(--color-line)] bg-white px-7 py-8 cursor-pointer transition-all duration-300 hover:shadow-[0_20px_50px_rgba(26,40,61,0.12)]">
+                  <article className="feature-card-hover group h-full min-h-[320px] cursor-pointer border-b border-r border-[var(--color-line)] bg-white px-7 py-8 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(26,40,61,0.12)]">
                     <p className="text-[11px] font-extrabold tracking-[0.18em] text-[var(--color-copy)]/50 transition-colors group-hover:text-white/80">
                       {service.number}
                     </p>
                     <div className="mt-8 inline-flex h-12 w-12 items-center justify-center rounded-[10px] border border-[var(--color-line)] text-[var(--color-accent-strong)] transition-colors group-hover:border-white/25 group-hover:text-white">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <h3 className="mt-6 max-w-[210px] font-heading text-[1.4rem] font-extrabold leading-[1.18] tracking-[-0.03em] text-[var(--color-heading)] transition-colors group-hover:text-white">
+                    <h3 className="mt-6 max-w-[220px] font-heading text-[1.4rem] font-extrabold leading-[1.18] tracking-[-0.03em] text-[var(--color-heading)] transition-colors group-hover:text-white">
                       {service.title}
                     </h3>
                   </article>
@@ -92,7 +93,8 @@ export default function AlianzasView() {
               HERRAMIENTAS DIGITALES
             </h2>
             <p className="mt-5 text-base leading-8 text-[var(--color-copy)]">
-              Automatizamos procesos clave para mejorar la experiencia comercial y operativa de cada desarrollo.
+              Automatizamos procesos clave para mejorar la experiencia comercial y operativa de
+              cada desarrollo.
             </p>
           </Reveal>
 
@@ -124,33 +126,32 @@ export default function AlianzasView() {
 
       <section className="bg-[var(--color-surface-soft)] px-6 py-20 sm:py-24">
         <div className="mx-auto max-w-[1240px]">
-          <Reveal className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <p className="editorial-kicker text-[var(--color-copy)]/70">INTELIGENCIA DE MERCADO</p>
-              <h2 className="mt-4 font-heading text-[2.8rem] font-extrabold leading-[0.98] tracking-[-0.04em] text-[var(--color-heading)] sm:text-[4rem]">
-                ESTUDIOS Y ANÁLISIS
-                <br />
-                DE MERCADO
-              </h2>
-            </div>
-            <p className="max-w-[330px] text-sm leading-7 text-[var(--color-copy)]">
-              Decisiones respaldadas por datos reales del mercado inmobiliario de la Zona Metropolitana de Guadalajara.
-            </p>
+          <Reveal className="text-center">
+            <p className="editorial-kicker text-[var(--color-copy)]/70">INTELIGENCIA DE MERCADO</p>
+            <h2 className="mt-4 font-heading text-[2.8rem] font-extrabold leading-[0.98] tracking-[-0.04em] text-[var(--color-heading)] sm:text-[4rem]">
+              ESTUDIOS Y ANÁLISIS
+              <br />
+              DE MERCADO
+            </h2>
           </Reveal>
 
           <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
             {MARKET_STUDIES.map((study, index) => (
               <Reveal key={study.index} delay={index * 0.05}>
-                <article className="group h-full min-h-[280px] border-2 border-[var(--color-line)] bg-white px-4 py-5 shadow-[0_18px_42px_rgba(27,42,62,0.05)] transition-all duration-300 cursor-pointer hover:border-[var(--color-navy)] hover:shadow-[0_20px_50px_rgba(31,45,68,0.12)] flex flex-col justify-between">
-                  <div className="flex items-start justify-between gap-3">
-                    <BarChart3 className="mt-1 h-5 w-5 text-[var(--color-accent-strong)]" />
-                    <span className="font-heading text-[2rem] font-extrabold leading-none text-[var(--color-line)]">{study.index}</span>
+                <article className="group flex h-full min-h-[280px] cursor-pointer flex-col justify-center border-2 border-[var(--color-line)] bg-white px-5 py-6 text-center shadow-[0_18px_42px_rgba(27,42,62,0.05)] transition-all duration-300 hover:border-[var(--color-navy)] hover:shadow-[0_20px_50px_rgba(31,45,68,0.12)]">
+                  <div className="flex items-center justify-center gap-3">
+                    <BarChart3 className="h-5 w-5 text-[var(--color-accent-strong)]" />
+                    <span className="font-heading text-[2rem] font-extrabold leading-none text-[var(--color-line)]">
+                      {study.index}
+                    </span>
                   </div>
-                  <div>
-                    <h3 className="mt-6 font-heading text-[1.08rem] font-extrabold tracking-[-0.02em] text-[var(--color-heading)]">
+                  <div className="mt-6">
+                    <h3 className="font-heading text-[1.08rem] font-extrabold tracking-[-0.02em] text-[var(--color-heading)]">
                       {study.title}
                     </h3>
-                    <p className="mt-3 text-[13px] leading-6 text-[var(--color-copy)]">{study.description}</p>
+                    <p className="mt-3 text-[13px] leading-6 text-[var(--color-copy)]">
+                      {study.description}
+                    </p>
                   </div>
                 </article>
               </Reveal>
@@ -168,7 +169,8 @@ export default function AlianzasView() {
               JURÍDICO
             </h2>
             <p className="mt-6 max-w-[470px] text-base leading-8 text-[var(--color-copy)]">
-              Brindamos asesoramiento y acompañamiento al desarrollador y al cliente desde la etapa de gestación del proyecto inmobiliario hasta la escrituración y postventa.
+              Brindamos asesoramiento y acompañamiento al desarrollador y al cliente desde la etapa
+              de gestación del proyecto inmobiliario hasta la escrituración y postventa.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {LEGAL_SUPPORT.map((item) => (
@@ -183,10 +185,13 @@ export default function AlianzasView() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.08} className="grid gap-4 sm:grid-cols-[1fr_0.62fr]">
-            <div className="order-2 h-[180px] rounded-[8px] bg-[var(--color-surface-soft)] sm:order-1 sm:h-[220px]" />
-            <div className="order-1 flex h-[320px] items-center justify-center rounded-[8px] bg-[var(--color-surface-soft)] sm:order-2 sm:h-[420px]">
-              <Gavel className="h-20 w-20 text-[var(--color-line)]" />
+          <Reveal delay={0.08}>
+            <div className="overflow-hidden rounded-[16px] border border-[var(--color-line)] bg-[var(--color-surface-soft)] p-4 shadow-[0_24px_60px_rgba(25,41,63,0.08)]">
+              <img
+                src={contractIllustration}
+                alt="Ilustración de firma de contrato inmobiliario"
+                className="w-full rounded-[12px]"
+              />
             </div>
           </Reveal>
         </div>

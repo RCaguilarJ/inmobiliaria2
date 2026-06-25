@@ -20,45 +20,45 @@ export default function ContactView() {
       <section className="bg-white px-6 py-20 sm:py-24">
         <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <Reveal>
-            <p className="editorial-kicker text-[var(--color-copy)]/70">INFORMACIÓN DE CONTACTO</p>
-            <h2 className="mt-4 font-heading text-[2.9rem] font-extrabold tracking-[-0.05em] text-[var(--color-heading)] sm:text-[4.2rem]">
-              ESTAMOS AQUÍ PARA TI
-            </h2>
-            <p className="mt-6 max-w-[590px] text-base leading-8 text-[var(--color-copy)]">{SITE_COPY.contact.intro}</p>
+            <div className="text-center lg:text-left">
+              <p className="editorial-kicker text-[var(--color-copy)]/70">INFORMACIÓN DE CONTACTO</p>
+              <h2 className="mt-4 font-heading text-[2.9rem] font-extrabold tracking-[-0.05em] text-[var(--color-heading)] sm:text-[4.2rem]">
+                ESTAMOS AQUÍ PARA TI
+              </h2>
+              <p className="mx-auto mt-6 max-w-[590px] text-base leading-8 text-[var(--color-copy)] lg:mx-0">
+                {SITE_COPY.contact.intro}
+              </p>
+            </div>
 
-            <div className="mt-10 space-y-7">
+            <div className="mt-10 grid gap-4 sm:grid-cols-2">
               {CONTACT_CARDS.map((card, index) => {
                 const Icon = icons[index];
                 const content = (
-                  <>
+                  <div className="flex h-full flex-col items-center rounded-[18px] border border-[var(--color-line)] bg-[var(--color-surface-soft)] px-6 py-7 text-center">
                     <div className="inline-flex h-11 w-11 items-center justify-center border border-[var(--color-line)] text-[var(--color-accent-strong)]">
-                      <Icon className="h-[1.15rem] w-[1.15rem]" />
+                      <Icon className="h-[1.1rem] w-[1.1rem]" />
                     </div>
-                    <div>
-                      <p className="text-[0.72rem] font-extrabold uppercase tracking-[0.14em] text-[var(--color-copy)]/82">
-                        {card.title}
-                      </p>
-                      <p className="mt-2 text-[1.2rem] font-bold leading-[1.2] tracking-[-0.025em] text-[var(--color-heading)] sm:text-[1.45rem] lg:text-[1.62rem]">
-                        {card.value}
-                      </p>
-                      <p className="mt-1 text-[0.94rem] leading-6 text-[var(--color-copy)]/82">{card.caption}</p>
-                    </div>
-                  </>
+                    <p className="mt-4 text-[0.72rem] font-extrabold uppercase tracking-[0.14em] text-[var(--color-copy)]/82">
+                      {card.title}
+                    </p>
+                    <p className="mt-2 text-[1rem] font-bold leading-[1.35] tracking-[-0.02em] text-[var(--color-heading)] sm:text-[1.12rem]">
+                      {card.value}
+                    </p>
+                    <p className="mt-2 text-[0.86rem] leading-6 text-[var(--color-copy)]/82">
+                      {card.caption}
+                    </p>
+                  </div>
                 );
 
                 if (card.href) {
                   return (
-                    <a key={card.title} href={card.href} className="flex items-start gap-5">
+                    <a key={card.title} href={card.href} className="h-full">
                       {content}
                     </a>
                   );
                 }
 
-                return (
-                  <div key={card.title} className="flex items-start gap-5">
-                    {content}
-                  </div>
-                );
+                return <div key={card.title}>{content}</div>;
               })}
             </div>
           </Reveal>

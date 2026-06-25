@@ -23,7 +23,7 @@ interface HomeViewProps {
 
 const topIcons = [Building2, TrendingUp, Users, BriefcaseBusiness];
 const heroIcons = [Building2, Users, TrendingUp, MonitorSmartphone];
-const heroTitleLines = ['PROPIEDADES', 'EXCLUSIVAS PARA', 'UN NUEVO', 'ESTANDAR DE VIDA'];
+const heroTitleLines = ['PROPIEDADES', 'EXCLUSIVAS PARA', 'UN NUEVO', 'ESTÁNDAR DE VIDA'];
 
 export default function HomeView({ onNavigate }: HomeViewProps) {
   return (
@@ -85,7 +85,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 onClick={() => onNavigate('/contacto')}
                 className="rounded-[8px] border border-white/30 bg-[rgba(255,255,255,0.1)] px-5 py-3 text-sm font-extrabold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-[rgba(255,255,255,0.15)]"
               >
-                Solicitar asesoria
+                Solicitar asesoría
               </button>
             </motion.div>
           </motion.div>
@@ -115,7 +115,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       <section className="bg-white px-6 py-20 sm:py-24">
         <div className="mx-auto max-w-[1240px]">
           <Reveal className="text-center">
-            <p className="editorial-kicker text-[var(--color-copy)]/60">POR QUE ELEGIRNOS</p>
+            <p className="editorial-kicker text-[var(--color-copy)]/60">POR QUÉ ELEGIRNOS</p>
             <h2 className="mt-4 font-heading text-4xl font-extrabold tracking-[-0.03em] text-[var(--color-heading)] sm:text-5xl lg:text-6xl">
               LA DIFERENCIA LUXENT
             </h2>
@@ -158,7 +158,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         <Reveal className="mx-auto max-w-[800px] text-center">
           <SectionDivider inverse />
           <h2 className="mt-10 font-heading text-2xl font-medium leading-[1.3] tracking-[-0.03em] text-white/85 sm:text-4xl">
-            Mas que una inmobiliaria, <span className="font-extrabold text-white">somos tu aliado estrategico</span> en el mercado de bienes raices de lujo.
+            Más que una inmobiliaria, <span className="font-extrabold text-white">somos tu aliado estratégico</span> en el mercado de bienes raíces de lujo.
           </h2>
           <SectionDivider inverse className="mt-10" />
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
@@ -183,7 +183,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       <section className="relative isolate overflow-hidden px-6 py-20 text-white sm:py-24">
         <img
           src={PROJECT_IMAGES.homeCta}
-          alt="Comercializacion inmobiliaria Luxent"
+          alt="Comercialización inmobiliaria Luxent"
           className="absolute inset-0 h-full w-full object-cover"
           referrerPolicy="no-referrer"
         />

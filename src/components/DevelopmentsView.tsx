@@ -57,8 +57,13 @@ function ProjectDetailSheet({
       >
         <div className="relative">
           <div className="relative h-[320px] overflow-hidden sm:h-[380px]">
-            <img src={project.image} alt={project.name} className="h-full w-full object-cover" referrerPolicy="no-referrer" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[rgba(17,27,40,0.12)] via-[rgba(17,27,40,0.24)] to-[rgba(17,27,40,0.80)]" />
+            <img
+              src={project.image}
+              alt={project.name}
+              className="h-full w-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[rgba(17,27,40,0.08)] via-[rgba(17,27,40,0.16)] to-[rgba(17,27,40,0.74)]" />
 
             <button
               type="button"
@@ -68,12 +73,6 @@ function ProjectDetailSheet({
             >
               <X className="h-5 w-5" />
             </button>
-
-            {project.ribbon ? (
-              <div className="absolute left-5 top-5 rounded-full border border-white/16 bg-[rgba(255,255,255,0.14)] px-4 py-2 text-[11px] font-extrabold tracking-[0.18em] text-white backdrop-blur-md sm:left-7 sm:top-7">
-                {project.ribbon}
-              </div>
-            ) : null}
 
             <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
               <div className="mb-4 flex flex-wrap gap-2">
@@ -88,7 +87,6 @@ function ProjectDetailSheet({
               <h3 className="font-heading text-[2.4rem] font-extrabold leading-[0.94] tracking-[-0.05em] text-white sm:text-[3.25rem]">
                 {project.name}
               </h3>
-              <p className="mt-3 max-w-[720px] text-base leading-7 text-white/86">{project.description}</p>
             </div>
           </div>
 
@@ -96,13 +94,15 @@ function ProjectDetailSheet({
             <div className="grid gap-4 sm:grid-cols-3">
               <div className="rounded-[24px] bg-white p-5 shadow-[0_18px_44px_rgba(18,31,53,0.08)]">
                 <span className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[var(--color-copy)]/72">
-                  Ubicacion
+                  Ubicación
                 </span>
                 <div className="mt-4 flex items-start gap-3">
                   <div className="inline-flex h-11 w-11 items-center justify-center rounded-[14px] bg-[var(--color-surface-soft)] text-[var(--color-accent-strong)]">
                     <MapPin className="h-5 w-5" />
                   </div>
-                  <p className="text-sm font-semibold leading-6 text-[var(--color-heading)]">{project.location}</p>
+                  <p className="text-sm font-semibold leading-6 text-[var(--color-heading)]">
+                    {project.location}
+                  </p>
                 </div>
               </div>
 
@@ -114,19 +114,23 @@ function ProjectDetailSheet({
                   <div className="inline-flex h-11 w-11 items-center justify-center rounded-[14px] bg-[var(--color-surface-soft)] text-[var(--color-accent-strong)]">
                     <CalendarRange className="h-5 w-5" />
                   </div>
-                  <p className="text-sm font-semibold leading-6 text-[var(--color-heading)]">{project.status}</p>
+                  <p className="text-sm font-semibold leading-6 text-[var(--color-heading)]">
+                    {project.status}
+                  </p>
                 </div>
               </div>
 
               <div className="rounded-[24px] bg-white p-5 shadow-[0_18px_44px_rgba(18,31,53,0.08)]">
                 <span className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[var(--color-copy)]/72">
-                  Tipologia
+                  Tipología
                 </span>
                 <div className="mt-4 flex items-start gap-3">
                   <div className="inline-flex h-11 w-11 items-center justify-center rounded-[14px] bg-[var(--color-surface-soft)] text-[var(--color-accent-strong)]">
                     <Building2 className="h-5 w-5" />
                   </div>
-                  <p className="text-sm font-semibold leading-6 text-[var(--color-heading)]">{project.category}</p>
+                  <p className="text-sm font-semibold leading-6 text-[var(--color-heading)]">
+                    {project.category}
+                  </p>
                 </div>
               </div>
             </div>
@@ -139,10 +143,10 @@ function ProjectDetailSheet({
                   </div>
                   <div>
                     <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[var(--color-copy)]/72">
-                      Vision general
+                      Visión general
                     </p>
                     <h4 className="mt-1 font-heading text-[1.7rem] font-extrabold tracking-[-0.04em] text-[var(--color-heading)]">
-                      Una lectura rapida del proyecto
+                      Una lectura rápida del proyecto
                     </h4>
                   </div>
                 </div>
@@ -164,7 +168,7 @@ function ProjectDetailSheet({
                     Ideal para
                   </p>
                   <h4 className="mt-2 font-heading text-[1.7rem] font-extrabold tracking-[-0.04em] text-[var(--color-heading)]">
-                    Perfil de cliente recomendado
+                    Perfil de cliente
                   </h4>
 
                   <div className="mt-6 grid gap-3">
@@ -192,7 +196,7 @@ function ProjectDetailSheet({
                       </div>
                       <div>
                         <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[var(--color-copy)]/72">
-                          Composicion del desarrollo
+                          Composición del desarrollo
                         </p>
                         <h4 className="mt-1 font-heading text-[1.4rem] font-extrabold tracking-[-0.04em] text-[var(--color-heading)]">
                           Estructura del proyecto
@@ -202,7 +206,10 @@ function ProjectDetailSheet({
 
                     <ul className="mt-5 space-y-3">
                       {project.composition.map((item) => (
-                        <li key={item} className="rounded-[18px] bg-[var(--color-surface)] px-4 py-4 text-sm leading-7 text-[var(--color-copy)]">
+                        <li
+                          key={item}
+                          className="rounded-[18px] bg-[var(--color-surface)] px-4 py-4 text-sm leading-7 text-[var(--color-copy)]"
+                        >
                           {item}
                         </li>
                       ))}
@@ -212,13 +219,18 @@ function ProjectDetailSheet({
 
                 {project.deliveries?.length ? (
                   <section className="rounded-[28px] bg-[var(--color-navy)] p-6 text-white shadow-[0_24px_54px_rgba(18,31,53,0.24)] sm:p-7">
-                    <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-white/60">Entregas</p>
+                    <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-white/60">
+                      Entregas
+                    </p>
                     <h4 className="mt-2 font-heading text-[1.4rem] font-extrabold tracking-[-0.04em] text-white">
                       Fechas y disponibilidad
                     </h4>
                     <div className="mt-5 space-y-3">
                       {project.deliveries.map((item) => (
-                        <div key={item} className="rounded-[18px] border border-white/10 bg-white/8 px-4 py-4 text-sm leading-7 text-white/84">
+                        <div
+                          key={item}
+                          className="rounded-[18px] border border-white/10 bg-white/8 px-4 py-4 text-sm leading-7 text-white/84"
+                        >
                           {item}
                         </div>
                       ))}
@@ -233,7 +245,9 @@ function ProjectDetailSheet({
                 <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[var(--color-copy)]/72">
                   Cierre comercial
                 </p>
-                <p className="mt-3 text-[15px] leading-8 text-[var(--color-copy)]">{project.closing}</p>
+                <p className="mt-3 text-[15px] leading-8 text-[var(--color-copy)]">
+                  {project.closing}
+                </p>
               </section>
             ) : null}
           </div>
@@ -264,6 +278,12 @@ export default function DevelopmentsView() {
     return DEVELOPMENT_PROJECTS.filter((project) => project.filters?.includes(activeFilter));
   }, [activeFilter]);
 
+  const openProject = (project: DevelopmentProject) => {
+    if (project.detailReady) {
+      setSelectedProject(project);
+    }
+  };
+
   return (
     <div>
       <PageHero
@@ -278,12 +298,8 @@ export default function DevelopmentsView() {
         <div className="mx-auto max-w-[1240px]">
           <Reveal className="text-center">
             <h2 className="font-heading text-[2.9rem] font-extrabold tracking-[-0.05em] text-[var(--color-heading)] sm:text-[4.2rem]">
-              DESARROLLOS DESTACADOS
+              PORTAFOLIO DE DESARROLLOS
             </h2>
-            <p className="mx-auto mt-5 max-w-[720px] text-sm leading-8 text-[var(--color-copy)] sm:text-base">
-              Dejamos unicamente los proyectos reales del portafolio actual. Cada ficha abre una presentacion comercial mejor
-              estructurada y enfocada en decision de compra.
-            </p>
           </Reveal>
 
           <Reveal className="mt-8 flex flex-wrap justify-center gap-3" delay={0.08} y={18}>
@@ -310,7 +326,20 @@ export default function DevelopmentsView() {
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
             {projects.map((project, index) => (
               <Reveal key={project.name} delay={index * 0.05}>
-                <article className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-[var(--color-line)] bg-white shadow-[0_20px_50px_rgba(29,45,67,0.08)] transition-transform duration-300 hover:-translate-y-1">
+                <article
+                  className={`group flex h-full flex-col overflow-hidden rounded-[20px] border border-[var(--color-line)] bg-white shadow-[0_20px_50px_rgba(29,45,67,0.08)] transition-transform duration-300 ${
+                    project.detailReady ? 'cursor-pointer hover:-translate-y-1' : ''
+                  }`}
+                  onClick={() => openProject(project)}
+                  onKeyDown={(event) => {
+                    if ((event.key === 'Enter' || event.key === ' ') && project.detailReady) {
+                      event.preventDefault();
+                      openProject(project);
+                    }
+                  }}
+                  role={project.detailReady ? 'button' : undefined}
+                  tabIndex={project.detailReady ? 0 : undefined}
+                >
                   <div className="relative">
                     <img
                       src={project.image}
@@ -325,16 +354,14 @@ export default function DevelopmentsView() {
                   </div>
 
                   <div className="flex flex-1 flex-col px-6 py-6">
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <h3 className="font-heading text-[1.95rem] font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
-                          {project.name}
-                        </h3>
-                        <p className="mt-2 flex items-center gap-2 text-sm text-[var(--color-copy)]">
-                          <MapPin className="h-4 w-4" />
-                          {project.location}
-                        </p>
-                      </div>
+                    <div>
+                      <h3 className="font-heading text-[1.95rem] font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
+                        {project.name}
+                      </h3>
+                      <p className="mt-2 flex items-center gap-2 text-sm text-[var(--color-copy)]">
+                        <MapPin className="h-4 w-4" />
+                        {project.location}
+                      </p>
                     </div>
 
                     <div className="mt-4 flex flex-wrap gap-2">
@@ -343,22 +370,10 @@ export default function DevelopmentsView() {
                       </span>
                     </div>
 
-                    <p className="mt-4 flex-1 text-sm leading-7 text-[var(--color-copy)]">{project.description}</p>
-
-                    {project.detailReady ? (
-                      <button
-                        type="button"
-                        onClick={() => setSelectedProject(project)}
-                        className="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-[var(--color-navy)]"
-                      >
-                        Ver proyecto
-                        <ArrowUpRight className="h-4 w-4" />
-                      </button>
-                    ) : (
-                      <span className="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-[var(--color-copy)]/62">
-                        Ficha en preparacion
-                      </span>
-                    )}
+                    <div className="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-[var(--color-navy)]">
+                      Ver proyecto
+                      <ArrowUpRight className="h-4 w-4" />
+                    </div>
                   </div>
                 </article>
               </Reveal>
@@ -368,7 +383,12 @@ export default function DevelopmentsView() {
       </section>
 
       <AnimatePresence>
-        {selectedProject ? <ProjectDetailSheet project={selectedProject} onClose={() => setSelectedProject(null)} /> : null}
+        {selectedProject ? (
+          <ProjectDetailSheet
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
+        ) : null}
       </AnimatePresence>
     </div>
   );

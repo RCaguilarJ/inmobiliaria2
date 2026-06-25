@@ -87,7 +87,7 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
                 onClick={() => handleNav('/contacto')}
                 className="shrink-0 rounded-full bg-[var(--color-navy)] px-8 py-3 text-sm font-semibold text-white shadow-[0_14px_40px_rgba(15,28,45,0.24)] transition-colors hover:bg-[#1d2b46]"
               >
-                Agendar asesoria
+                Agendar asesoría
               </button>
             </div>
 
@@ -136,7 +136,7 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
                 onClick={() => handleNav('/contacto')}
                 className="rounded-[14px] bg-[var(--color-accent-strong)] px-6 py-3 text-[13px] font-bold text-white shadow-[0_14px_36px_rgba(33,51,77,0.18)]"
               >
-                Agendar asesoria
+                Agendar asesoría
               </button>
             </div>
 
@@ -182,7 +182,7 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
                 onClick={() => handleNav('/contacto')}
                 className="mt-2 rounded-xl bg-[var(--color-accent-strong)] px-4 py-3 text-sm font-bold text-white"
               >
-                Agendar asesoria
+                Agendar asesoría
               </button>
             </div>
           </motion.div>

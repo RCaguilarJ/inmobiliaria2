@@ -1,11 +1,5 @@
 import { BarChart3, Cpu, Megaphone, MonitorSmartphone, ShieldCheck, Users } from 'lucide-react';
-import {
-  ABOUT_PILLS,
-  DIFFERENTIATORS,
-  OBJECTIVE_CARDS,
-  PROJECT_IMAGES,
-  SITE_COPY,
-} from '../data';
+import { DIFFERENTIATORS, OBJECTIVE_CARDS, PROJECT_IMAGES, SITE_COPY } from '../data';
 import PageHero from './PageHero';
 import Reveal from './Reveal';
 
@@ -37,17 +31,9 @@ export default function NosotrosView() {
             <h2 className="font-heading text-[2.8rem] font-extrabold tracking-[-0.04em] text-[var(--color-heading)] sm:text-[4rem]">
               QUIÉNES SOMOS
             </h2>
-            <p className="mt-5 text-base leading-8 text-[var(--color-copy)]">{SITE_COPY.about.description}</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {ABOUT_PILLS.map((pill) => (
-                <span
-                  key={pill}
-                  className="rounded-[8px] bg-[var(--color-surface-soft)] px-4 py-2 text-[13px] font-semibold text-[var(--color-copy)]"
-                >
-                  {pill}
-                </span>
-              ))}
-            </div>
+            <p className="mt-5 text-base leading-8 text-[var(--color-copy)]">
+              {SITE_COPY.about.description}
+            </p>
           </Reveal>
         </div>
       </section>
@@ -58,7 +44,9 @@ export default function NosotrosView() {
             <h2 className="font-heading text-[2.7rem] font-extrabold tracking-[-0.04em] text-[var(--color-heading)] sm:text-[3.9rem]">
               NUESTRO OBJETIVO
             </h2>
-            <p className="mt-5 text-base leading-8 text-[var(--color-copy)]">{SITE_COPY.about.objective}</p>
+            <p className="mt-5 text-base leading-8 text-[var(--color-copy)]">
+              {SITE_COPY.about.objective}
+            </p>
           </Reveal>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
@@ -74,7 +62,9 @@ export default function NosotrosView() {
                     <h3 className="mt-5 font-heading text-[1.45rem] font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
                       {card.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-7 text-[var(--color-copy)]">{card.description}</p>
+                    <p className="mt-3 text-sm leading-7 text-[var(--color-copy)]">
+                      {card.description}
+                    </p>
                   </article>
                 </Reveal>
               );
@@ -104,7 +94,9 @@ export default function NosotrosView() {
                     <h3 className="mt-5 font-heading text-[1.5rem] font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
                       {card.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-7 text-[var(--color-copy)]">{card.description}</p>
+                    <p className="mt-3 text-sm leading-7 text-[var(--color-copy)]">
+                      {card.description}
+                    </p>
                   </article>
                 </Reveal>
               );
@@ -114,7 +106,7 @@ export default function NosotrosView() {
       </section>
 
       <section className="bg-[var(--color-surface-soft)] px-6 py-20 sm:py-24">
-        <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[0.84fr_1.16fr] lg:items-center">
+        <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
           <Reveal>
             <h2 className="font-heading text-[2.7rem] font-extrabold leading-[0.96] tracking-[-0.04em] text-[var(--color-heading)] sm:text-[4rem]">
               INFRAESTRUCTURA
@@ -123,16 +115,13 @@ export default function NosotrosView() {
               <br />
               CONFIANZA
             </h2>
-            <p className="mt-6 max-w-[420px] text-base leading-8 text-[var(--color-copy)]">
-              {SITE_COPY.about.infrastructure}
-            </p>
           </Reveal>
 
           <Reveal delay={0.08} className="grid gap-4 sm:grid-cols-2">
             <div className="overflow-hidden rounded-[8px] sm:col-span-2">
               <img
                 src={PROJECT_IMAGES.galleryWide}
-                alt="Proyecto comercializado por Luxent"
+                alt="Terraza con vista al Country Club"
                 className="aspect-[1.66] h-full w-full object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -140,7 +129,7 @@ export default function NosotrosView() {
             <div className="overflow-hidden rounded-[8px]">
               <img
                 src={PROJECT_IMAGES.gallerySmallA}
-                alt="Interior de lujo"
+                alt="Interior residencial de lujo"
                 className="aspect-[1.05] h-full w-full object-cover"
                 referrerPolicy="no-referrer"
               />

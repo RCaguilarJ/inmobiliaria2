@@ -3,6 +3,12 @@ import { CheckCircle2, ChevronDown, Mail, MessageCircle, Send } from 'lucide-rea
 import { motion } from 'motion/react';
 import { CONTACT_INFO } from '../data';
 
+const interestOptions = [
+  'Asesoría para compra o inversión',
+  'Asesoría personalizada',
+  'Comercialización de desarrollo',
+];
+
 interface ContactFormProps {
   title?: string;
   subtitle?: string;
@@ -14,7 +20,7 @@ interface ContactFormProps {
 export default function ContactForm({
   title = 'SOLICITA UNA ASESORÍA',
   subtitle = '',
-  defaultInterest = 'Informacion general',
+  defaultInterest = interestOptions[0],
   customMessage = '',
   surface = 'card',
 }: ContactFormProps) {
@@ -37,12 +43,12 @@ export default function ContactForm({
 
   const openChannels = () => {
     const composedMessage = [
-      'Hola, me interesa recibir asesoria de Luxent Properties.',
+      'Hola, me interesa recibir asesoría de Luxent Properties.',
       '',
       `Nombre: ${formData.name}`,
-      `Telefono: ${formData.phone}`,
+      `Teléfono: ${formData.phone}`,
       `Correo: ${formData.email}`,
-      `Interes: ${formData.interest}`,
+      `Interés: ${formData.interest}`,
       `Mensaje: ${formData.message || 'Sin mensaje adicional.'}`,
     ].join('\n');
 
@@ -52,7 +58,7 @@ export default function ContactForm({
     }
 
     const mailtoUrl = `mailto:${CONTACT_INFO.email}?subject=${encodeURIComponent(
-      `Solicitud de asesoria · ${formData.interest}`,
+      `Solicitud de asesoría · ${formData.interest}`,
     )}&body=${encodeURIComponent(composedMessage)}`;
 
     window.location.href = mailtoUrl;
@@ -88,7 +94,11 @@ export default function ContactForm({
   return (
     <div className={wrapperClass}>
       {submitted ? (
-        <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="space-y-5">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="space-y-5"
+        >
           <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-accent)]/14 text-[var(--color-accent-strong)]">
             <CheckCircle2 className="h-8 w-8" />
           </div>
@@ -97,7 +107,8 @@ export default function ContactForm({
               Solicitud preparada
             </h3>
             <p className="mt-3 max-w-[460px] text-sm leading-7 text-[var(--color-copy)]">
-              Abrimos WhatsApp y tu cliente de correo con la informacion capturada para que el seguimiento sea inmediato.
+              Abrimos WhatsApp y tu cliente de correo con la información capturada para que el
+              seguimiento sea inmediato.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
@@ -131,8 +142,14 @@ export default function ContactForm({
       ) : (
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="space-y-2">
-            <h3 className="font-heading text-[2rem] font-extrabold tracking-[-0.02em] text-[var(--color-navy)]">{title}</h3>
-            {subtitle && <p className="max-w-[470px] text-sm leading-7 text-[var(--color-copy)]">{subtitle}</p>}
+            <h3 className="font-heading text-[2rem] font-extrabold tracking-[-0.02em] text-[var(--color-navy)]">
+              {title}
+            </h3>
+            {subtitle ? (
+              <p className="max-w-[470px] text-sm leading-7 text-[var(--color-copy)]">
+                {subtitle}
+              </p>
+            ) : null}
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
@@ -180,10 +197,9 @@ export default function ContactForm({
                 onChange={(event) => setFormData({ ...formData, interest: event.target.value })}
                 className="w-full appearance-none border border-[var(--color-line)] bg-white px-4 py-4 text-[15px] font-medium text-[var(--color-navy)] outline-none focus:border-[var(--color-accent)]"
               >
-                <option>Informacion general</option>
-                <option>Compra o inversion</option>
-                <option>Comercializacion de desarrollo</option>
-                <option>Asesoria personalizada</option>
+                {interestOptions.map((option) => (
+                  <option key={option}>{option}</option>
+                ))}
               </select>
               <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--color-copy)]" />
             </div>
@@ -195,7 +211,7 @@ export default function ContactForm({
               rows={5}
               value={formData.message}
               onChange={(event) => setFormData({ ...formData, message: event.target.value })}
-              placeholder="Cuentanos sobre tu proyecto o necesidad..."
+              placeholder="Cuéntanos sobre tu proyecto o necesidad..."
               className="w-full resize-none border border-[var(--color-line)] bg-white px-4 py-4 text-[15px] font-medium text-[var(--color-navy)] outline-none focus:border-[var(--color-accent)]"
             />
           </label>

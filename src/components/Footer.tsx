@@ -20,11 +20,15 @@ export default function Footer({ activePath, onNavigate }: FooterProps) {
       <div className="mx-auto grid max-w-[1240px] gap-12 px-6 py-16 md:grid-cols-2 xl:grid-cols-[1.2fr_0.8fr_1fr_1fr]">
         <div className="space-y-5">
           <CountryClubLogo variant="dark" className="w-[168px]" />
-          <p className="max-w-[220px] text-sm leading-7 text-white/70">{FOOTER_COPY.tagline}</p>
+          <p className="max-w-[220px] text-sm leading-7 text-white/70">
+            {FOOTER_COPY.tagline}
+          </p>
         </div>
 
         <div>
-          <h3 className="text-[14px] font-extrabold tracking-[0.04em] text-white">ENLACES RÁPIDOS</h3>
+          <h3 className="text-[14px] font-extrabold tracking-[0.04em] text-white">
+            ENLACES RÁPIDOS
+          </h3>
           <div className="mt-5 flex flex-col gap-3 text-sm text-white/72">
             {NAV_ITEMS.map((item) => (
               <button
@@ -42,11 +46,17 @@ export default function Footer({ activePath, onNavigate }: FooterProps) {
         <div>
           <h3 className="text-[14px] font-extrabold tracking-[0.04em] text-white">CONTACTO</h3>
           <div className="mt-5 space-y-4 text-sm leading-6 text-white/72">
-            <a href={`mailto:${CONTACT_INFO.email}`} className="flex items-start gap-3 hover:text-white">
+            <a
+              href={`mailto:${CONTACT_INFO.email}`}
+              className="flex items-start gap-3 hover:text-white"
+            >
               <Mail className="mt-1 h-4 w-4 shrink-0" />
               <span>{CONTACT_INFO.email}</span>
             </a>
-            <a href={CONTACT_INFO.phoneHref} className="flex items-start gap-3 hover:text-white">
+            <a
+              href={CONTACT_INFO.phoneHref}
+              className="flex items-start gap-3 hover:text-white"
+            >
               <Phone className="mt-1 h-4 w-4 shrink-0" />
               <span>{CONTACT_INFO.phoneDisplay}</span>
             </a>
@@ -76,7 +86,9 @@ export default function Footer({ activePath, onNavigate }: FooterProps) {
       </div>
 
       <div className="border-t border-white/10 px-6 py-6">
-        <div className="mx-auto max-w-[1240px] text-center text-sm text-white/42">{FOOTER_COPY.copyright}</div>
+        <div className="mx-auto max-w-[1240px] text-center text-sm text-white/42">
+          {FOOTER_COPY.copyright}
+        </div>
       </div>
     </footer>
   );
