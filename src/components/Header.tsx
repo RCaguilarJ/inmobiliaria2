@@ -53,7 +53,7 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
     <header className="fixed inset-x-0 top-0 z-50 transition-all duration-300">
       {useTransparentHeader ? (
         <div className="bg-[rgba(8,16,30,0.18)] backdrop-blur-2xl">
-          <div className="mx-auto flex h-[78px] max-w-[1240px] items-center justify-between px-5 lg:px-8">
+          <div className="mx-auto flex h-[78px] max-w-[1240px] items-center justify-between px-5 xl:px-8">
             <button
               type="button"
               onClick={() => handleNav('/')}
@@ -63,7 +63,7 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
               <CountryClubLogo variant="dark" className="w-24 sm:w-28" />
             </button>
 
-            <nav className="hidden flex-1 items-center justify-center gap-12 lg:flex">
+            <nav className="hidden flex-1 items-center justify-center gap-12 xl:flex">
               {NAV_ITEMS.map((item) => {
                 const active = item.path === activePath;
                 return (
@@ -81,7 +81,7 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
               })}
             </nav>
 
-            <div className="hidden lg:block">
+            <div className="hidden xl:block">
               <button
                 type="button"
                 onClick={() => handleNav('/contacto')}
@@ -91,7 +91,7 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
               </button>
             </div>
 
-            <div className="lg:hidden">
+            <div className="xl:hidden">
               <button
                 type="button"
                 onClick={() => setIsOpen((current) => !current)}
@@ -105,12 +105,12 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
         </div>
       ) : (
         <div className="border-b border-slate-200 bg-white shadow-[0_15px_40px_rgba(15,23,42,0.08)]">
-          <div className="mx-auto flex h-[78px] max-w-[1240px] items-center justify-between px-5 lg:px-8">
+          <div className="mx-auto flex h-[78px] max-w-[1240px] items-center justify-between px-5 xl:px-8">
             <button type="button" onClick={() => handleNav('/')} aria-label="Ir al inicio" className="shrink-0">
               <CountryClubLogo variant="light" className="w-[104px] sm:w-[118px]" />
             </button>
 
-            <nav className="hidden items-center gap-10 lg:flex">
+            <nav className="hidden items-center gap-10 xl:flex">
               {NAV_ITEMS.map((item) => {
                 const active = item.path === activePath;
                 return (
@@ -130,7 +130,7 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
               })}
             </nav>
 
-            <div className="hidden lg:block">
+            <div className="hidden xl:block">
               <button
                 type="button"
                 onClick={() => handleNav('/contacto')}
@@ -143,7 +143,7 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
             <button
               type="button"
               onClick={() => setIsOpen((current) => !current)}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-line)] text-[var(--color-navy)] lg:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-line)] text-[var(--color-navy)] xl:hidden"
               aria-label="Abrir menu"
             >
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -158,7 +158,7 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="border-t border-[var(--color-line)] bg-white lg:hidden"
+            className="border-t border-[var(--color-line)] bg-white xl:hidden"
           >
             <div className="mx-auto flex max-w-[1240px] flex-col gap-2 px-5 py-4">
               {NAV_ITEMS.map((item) => {

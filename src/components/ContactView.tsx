@@ -14,18 +14,18 @@ export default function ContactView() {
         eyebrow={SITE_COPY.contact.eyebrow}
         title={SITE_COPY.contact.title}
         subtitle={SITE_COPY.contact.subtitle}
-        titleClassName="max-w-[760px] text-5xl leading-[0.95] sm:text-6xl lg:text-[4.4rem]"
+        titleClassName="max-w-[760px]"
       />
 
-      <section className="bg-white px-6 py-20 sm:py-24">
-        <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+      <section className="page-section bg-white">
+        <div className="page-container grid gap-12 xl:grid-cols-[0.95fr_1.05fr] xl:items-start">
           <Reveal>
             <div className="text-center lg:text-left">
               <p className="editorial-kicker text-[var(--color-copy)]/70">INFORMACIÓN DE CONTACTO</p>
-              <h2 className="mt-4 font-heading text-[2.9rem] font-extrabold tracking-[-0.05em] text-[var(--color-heading)] sm:text-[4.2rem]">
+              <h2 className="section-display-title mt-4 font-heading font-extrabold tracking-[-0.05em] text-[var(--color-heading)]">
                 ESTAMOS AQUÍ PARA TI
               </h2>
-              <p className="mx-auto mt-6 max-w-[590px] text-base leading-8 text-[var(--color-copy)] lg:mx-0">
+              <p className="section-copy mx-auto mt-6 max-w-[590px] text-[var(--color-copy)] lg:mx-0">
                 {SITE_COPY.contact.intro}
               </p>
             </div>
@@ -69,7 +69,7 @@ export default function ContactView() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden px-6 py-24">
+      <section className="page-section-lg relative isolate overflow-hidden">
         <img
           src={PROJECT_IMAGES.officeBanner}
           alt="Oficinas Luxent"
@@ -78,9 +78,9 @@ export default function ContactView() {
         />
         <div className="absolute inset-0 bg-white/28" />
         <Reveal className="relative z-10 mx-auto flex max-w-[1240px] justify-center">
-          <div className="bg-white px-10 py-8 text-center shadow-[0_24px_70px_rgba(24,38,60,0.16)]">
+          <div className="bg-white px-6 py-6 text-center shadow-[0_24px_70px_rgba(24,38,60,0.16)] sm:px-10 sm:py-8">
             <p className="editorial-kicker text-[var(--color-copy)]/72">NUESTRAS OFICINAS</p>
-            <h2 className="mt-4 font-heading text-[2rem] font-extrabold tracking-[-0.03em] text-[var(--color-heading)] sm:text-[2.5rem]">
+            <h2 className="mt-4 font-heading text-[clamp(1.65rem,5vw,2.5rem)] font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
               COUNTRY CLUB, GUADALAJARA, JALISCO
             </h2>
           </div>

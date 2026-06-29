@@ -17,7 +17,7 @@ const socials = [
 export default function Footer({ activePath, onNavigate }: FooterProps) {
   return (
     <footer className="bg-[var(--color-navy)] text-white">
-      <div className="mx-auto grid max-w-[1240px] gap-12 px-6 py-16 md:grid-cols-2 xl:grid-cols-[1.2fr_0.8fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-[1240px] gap-12 px-[var(--page-gutter)] py-16 sm:grid-cols-2 xl:grid-cols-[1.2fr_0.8fr_1fr_1fr]">
         <div className="space-y-5">
           <CountryClubLogo variant="dark" className="w-[168px]" />
           <p className="max-w-[220px] text-sm leading-7 text-white/70">
@@ -85,7 +85,7 @@ export default function Footer({ activePath, onNavigate }: FooterProps) {
         </div>
       </div>
 
-      <div className="border-t border-white/10 px-6 py-6">
+      <div className="border-t border-white/10 px-[var(--page-gutter)] py-6">
         <div className="mx-auto max-w-[1240px] text-center text-sm text-white/42">
           {FOOTER_COPY.copyright}
         </div>

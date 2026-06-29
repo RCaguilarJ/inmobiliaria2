@@ -88,7 +88,7 @@ export default function ContactForm({
 
   const wrapperClass =
     surface === 'card'
-      ? 'rounded-[2px] border border-[var(--color-line)] bg-[var(--color-surface-soft)]/38 p-8 shadow-[0_24px_60px_rgba(25,41,63,0.06)] md:p-10'
+      ? 'rounded-[2px] border border-[var(--color-line)] bg-[var(--color-surface-soft)]/38 p-6 shadow-[0_24px_60px_rgba(25,41,63,0.06)] sm:p-8 md:p-10'
       : '';
 
   return (
@@ -111,7 +111,7 @@ export default function ContactForm({
               seguimiento sea inmediato.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <div className="responsive-actions">
             {CONTACT_INFO.whatsappHref && (
               <a
                 href={CONTACT_INFO.whatsappHref}
@@ -142,7 +142,7 @@ export default function ContactForm({
       ) : (
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="space-y-2">
-            <h3 className="font-heading text-[2rem] font-extrabold tracking-[-0.02em] text-[var(--color-navy)]">
+            <h3 className="font-heading text-[clamp(1.75rem,4vw,2rem)] font-extrabold tracking-[-0.02em] text-[var(--color-navy)]">
               {title}
             </h3>
             {subtitle ? (
@@ -152,7 +152,7 @@ export default function ContactForm({
             ) : null}
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2">
             <label className="space-y-2 text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--color-copy)]">
               <span>Nombre *</span>
               <input

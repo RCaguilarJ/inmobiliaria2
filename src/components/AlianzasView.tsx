@@ -40,15 +40,15 @@ export default function AlianzasView() {
         eyebrow={SITE_COPY.services.eyebrow}
         title={SITE_COPY.services.title}
         subtitle={SITE_COPY.services.subtitle}
-        titleClassName="max-w-[760px] text-5xl leading-[0.95] sm:text-6xl lg:text-[4.25rem]"
+        titleClassName="max-w-[760px]"
       />
 
-      <section className="bg-white px-6 py-20 sm:py-24">
-        <div className="mx-auto max-w-[1240px]">
+      <section className="page-section bg-white">
+        <div className="page-container">
           <Reveal className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="editorial-kicker text-[var(--color-copy)]/70">LO QUE HACEMOS</p>
-              <h2 className="mt-4 font-heading text-[2.8rem] font-extrabold tracking-[-0.04em] text-[var(--color-heading)] sm:text-[4rem]">
+              <h2 className="section-display-title mt-4 font-heading font-extrabold tracking-[-0.04em] text-[var(--color-heading)]">
                 NUESTROS SERVICIOS
               </h2>
             </div>
@@ -66,14 +66,14 @@ export default function AlianzasView() {
 
               return (
                 <Reveal key={service.number} delay={index * 0.04} y={18}>
-                  <article className="feature-card-hover group h-full min-h-[320px] cursor-pointer border-b border-r border-[var(--color-line)] bg-white px-7 py-8 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(26,40,61,0.12)]">
+                  <article className="feature-card-hover group h-full cursor-pointer border-b border-r border-[var(--color-line)] bg-white px-5 py-6 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(26,40,61,0.12)] sm:px-7 sm:py-8">
                     <p className="text-[11px] font-extrabold tracking-[0.18em] text-[var(--color-copy)]/50 transition-colors group-hover:text-white/80">
                       {service.number}
                     </p>
                     <div className="mt-8 inline-flex h-12 w-12 items-center justify-center rounded-[10px] border border-[var(--color-line)] text-[var(--color-accent-strong)] transition-colors group-hover:border-white/25 group-hover:text-white">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <h3 className="mt-6 max-w-[220px] font-heading text-[1.4rem] font-extrabold leading-[1.18] tracking-[-0.03em] text-[var(--color-heading)] transition-colors group-hover:text-white">
+                    <h3 className="card-display-title mt-6 max-w-[220px] font-heading font-extrabold tracking-[-0.03em] text-[var(--color-heading)] transition-colors group-hover:text-white">
                       {service.title}
                     </h3>
                   </article>
@@ -84,21 +84,21 @@ export default function AlianzasView() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20 sm:py-24">
-        <div className="mx-auto max-w-[1240px]">
+      <section className="page-section bg-white">
+        <div className="page-container">
           <Reveal className="mx-auto max-w-[800px] text-center">
-            <h2 className="font-heading text-[2.7rem] font-extrabold leading-[0.96] tracking-[-0.04em] text-[var(--color-heading)] sm:text-[4rem]">
+            <h2 className="section-display-title font-heading font-extrabold tracking-[-0.04em] text-[var(--color-heading)]">
               METODOLOGÍA Y
               <br />
               HERRAMIENTAS DIGITALES
             </h2>
-            <p className="mt-5 text-base leading-8 text-[var(--color-copy)]">
+            <p className="section-copy mt-5 text-[var(--color-copy)]">
               Automatizamos procesos clave para mejorar la experiencia comercial y operativa de
               cada desarrollo.
             </p>
           </Reveal>
 
-          <div className="mt-14 grid gap-6 lg:grid-cols-3">
+          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {TOOL_GROUPS.map((group, index) => {
               const Icon = toolIcons[index];
 
@@ -108,7 +108,7 @@ export default function AlianzasView() {
                     <div className="inline-flex h-12 w-12 items-center justify-center rounded-[10px] bg-[var(--color-accent-strong)] text-white">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="mt-5 font-heading text-[1.55rem] font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
+                    <h3 className="card-display-title mt-5 font-heading font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
                       {group.title}
                     </h3>
                     <ul className="mt-5 space-y-2 text-sm leading-7 text-[var(--color-copy)]">
@@ -124,11 +124,11 @@ export default function AlianzasView() {
         </div>
       </section>
 
-      <section className="bg-[var(--color-surface-soft)] px-6 py-20 sm:py-24">
-        <div className="mx-auto max-w-[1240px]">
+      <section className="page-section bg-[var(--color-surface-soft)]">
+        <div className="page-container">
           <Reveal className="text-center">
             <p className="editorial-kicker text-[var(--color-copy)]/70">INTELIGENCIA DE MERCADO</p>
-            <h2 className="mt-4 font-heading text-[2.8rem] font-extrabold leading-[0.98] tracking-[-0.04em] text-[var(--color-heading)] sm:text-[4rem]">
+            <h2 className="section-display-title mt-4 font-heading font-extrabold tracking-[-0.04em] text-[var(--color-heading)]">
               ESTUDIOS Y ANÁLISIS
               <br />
               DE MERCADO
@@ -160,15 +160,15 @@ export default function AlianzasView() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20 sm:py-24">
-        <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+      <section className="page-section bg-white">
+        <div className="page-container grid gap-12 xl:grid-cols-[0.85fr_1.15fr] xl:items-center">
           <Reveal>
-            <h2 className="font-heading text-[2.8rem] font-extrabold leading-[0.96] tracking-[-0.04em] text-[var(--color-heading)] sm:text-[4rem]">
+            <h2 className="section-display-title font-heading font-extrabold tracking-[-0.04em] text-[var(--color-heading)]">
               ACOMPAÑAMIENTO
               <br />
               JURÍDICO
             </h2>
-            <p className="mt-6 max-w-[470px] text-base leading-8 text-[var(--color-copy)]">
+            <p className="section-copy mt-6 max-w-[470px] text-[var(--color-copy)]">
               Brindamos asesoramiento y acompañamiento al desarrollador y al cliente desde la etapa
               de gestación del proyecto inmobiliario hasta la escrituración y postventa.
             </p>

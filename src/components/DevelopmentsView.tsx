@@ -84,14 +84,14 @@ function ProjectDetailSheet({
                 </span>
               </div>
 
-              <h3 className="font-heading text-[2.4rem] font-extrabold leading-[0.94] tracking-[-0.05em] text-white sm:text-[3.25rem]">
+              <h3 className="detail-sheet-title font-heading font-extrabold tracking-[-0.05em] text-white">
                 {project.name}
               </h3>
             </div>
           </div>
 
           <div className="space-y-6 px-5 py-6 sm:px-7 sm:py-8">
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-3">
               <div className="rounded-[24px] bg-white p-5 shadow-[0_18px_44px_rgba(18,31,53,0.08)]">
                 <span className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[var(--color-copy)]/72">
                   Ubicación
@@ -291,13 +291,13 @@ export default function DevelopmentsView() {
         eyebrow={SITE_COPY.developments.eyebrow}
         title={SITE_COPY.developments.title}
         subtitle={SITE_COPY.developments.subtitle}
-        titleClassName="max-w-[740px] text-5xl leading-[0.95] sm:text-6xl lg:text-[4.2rem]"
+        titleClassName="max-w-[740px]"
       />
 
-      <section className="bg-white px-6 py-20 sm:py-24">
-        <div className="mx-auto max-w-[1240px]">
+      <section className="page-section bg-white">
+        <div className="page-container">
           <Reveal className="text-center">
-            <h2 className="font-heading text-[2.9rem] font-extrabold tracking-[-0.05em] text-[var(--color-heading)] sm:text-[4.2rem]">
+            <h2 className="section-display-title font-heading font-extrabold tracking-[-0.05em] text-[var(--color-heading)]">
               PORTAFOLIO DE DESARROLLOS
             </h2>
           </Reveal>
@@ -323,7 +323,7 @@ export default function DevelopmentsView() {
             })}
           </Reveal>
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {projects.map((project, index) => (
               <Reveal key={project.name} delay={index * 0.05}>
                 <article
@@ -353,9 +353,9 @@ export default function DevelopmentsView() {
                     </span>
                   </div>
 
-                  <div className="flex flex-1 flex-col px-6 py-6">
+                  <div className="flex flex-1 flex-col px-5 py-5 sm:px-6 sm:py-6">
                     <div>
-                      <h3 className="font-heading text-[1.95rem] font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
+                      <h3 className="card-display-title font-heading font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
                         {project.name}
                       </h3>
                       <p className="mt-2 flex items-center gap-2 text-sm text-[var(--color-copy)]">

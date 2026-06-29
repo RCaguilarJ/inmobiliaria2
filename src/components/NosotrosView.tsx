@@ -16,8 +16,8 @@ export default function NosotrosView() {
         subtitle={SITE_COPY.about.subtitle}
       />
 
-      <section className="bg-white px-6 py-20 sm:py-24">
-        <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
+      <section className="page-section bg-white">
+        <div className="page-container grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
           <Reveal className="overflow-hidden rounded-[10px] shadow-[0_28px_64px_rgba(26,40,61,0.12)]">
             <img
               src={PROJECT_IMAGES.aboutFeature}
@@ -28,28 +28,28 @@ export default function NosotrosView() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <h2 className="font-heading text-[2.8rem] font-extrabold tracking-[-0.04em] text-[var(--color-heading)] sm:text-[4rem]">
+            <h2 className="section-display-title font-heading font-extrabold tracking-[-0.04em] text-[var(--color-heading)]">
               QUIÉNES SOMOS
             </h2>
-            <p className="mt-5 text-base leading-8 text-[var(--color-copy)]">
+            <p className="section-copy mt-5 text-[var(--color-copy)]">
               {SITE_COPY.about.description}
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="bg-[var(--color-surface-soft)] px-6 py-20 sm:py-24">
-        <div className="mx-auto max-w-[1240px]">
+      <section className="page-section bg-[var(--color-surface-soft)]">
+        <div className="page-container">
           <Reveal className="mx-auto max-w-[760px] text-center">
-            <h2 className="font-heading text-[2.7rem] font-extrabold tracking-[-0.04em] text-[var(--color-heading)] sm:text-[3.9rem]">
+            <h2 className="section-display-title font-heading font-extrabold tracking-[-0.04em] text-[var(--color-heading)]">
               NUESTRO OBJETIVO
             </h2>
-            <p className="mt-5 text-base leading-8 text-[var(--color-copy)]">
+            <p className="section-copy mt-5 text-[var(--color-copy)]">
               {SITE_COPY.about.objective}
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {OBJECTIVE_CARDS.map((card, index) => {
               const Icon = objectiveIcons[index];
 
@@ -59,7 +59,7 @@ export default function NosotrosView() {
                     <div className="inline-flex h-12 w-12 items-center justify-center rounded-[10px] bg-[var(--color-accent-strong)] text-white">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="mt-5 font-heading text-[1.45rem] font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
+                    <h3 className="card-display-title mt-5 font-heading font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
                       {card.title}
                     </h3>
                     <p className="mt-3 text-sm leading-7 text-[var(--color-copy)]">
@@ -73,10 +73,10 @@ export default function NosotrosView() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20 sm:py-24">
-        <div className="mx-auto max-w-[1240px]">
+      <section className="page-section bg-white">
+        <div className="page-container">
           <Reveal className="text-center">
-            <h2 className="font-heading text-[2.7rem] font-extrabold tracking-[-0.04em] text-[var(--color-heading)] sm:text-[3.9rem]">
+            <h2 className="section-display-title font-heading font-extrabold tracking-[-0.04em] text-[var(--color-heading)]">
               QUÉ NOS DIFERENCIA
             </h2>
           </Reveal>
@@ -91,7 +91,7 @@ export default function NosotrosView() {
                     <div className="inline-flex h-12 w-12 items-center justify-center rounded-[10px] bg-[var(--color-accent-strong)] text-white">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="mt-5 font-heading text-[1.5rem] font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
+                    <h3 className="card-display-title mt-5 font-heading font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
                       {card.title}
                     </h3>
                     <p className="mt-3 text-sm leading-7 text-[var(--color-copy)]">
@@ -105,10 +105,10 @@ export default function NosotrosView() {
         </div>
       </section>
 
-      <section className="bg-[var(--color-surface-soft)] px-6 py-20 sm:py-24">
-        <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
+      <section className="page-section bg-[var(--color-surface-soft)]">
+        <div className="page-container grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
           <Reveal>
-            <h2 className="font-heading text-[2.7rem] font-extrabold leading-[0.96] tracking-[-0.04em] text-[var(--color-heading)] sm:text-[4rem]">
+            <h2 className="section-display-title font-heading font-extrabold tracking-[-0.04em] text-[var(--color-heading)]">
               INFRAESTRUCTURA
               <br />
               QUE GENERA

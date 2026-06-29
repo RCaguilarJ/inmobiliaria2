@@ -39,18 +39,18 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         <div className="absolute inset-0 bg-gradient-to-r from-[rgba(12,22,36,0.65)] via-[rgba(12,22,36,0.36)] to-[rgba(12,22,36,0.08)]" />
         <div className="absolute inset-x-0 top-0 h-[180px] bg-gradient-to-b from-[rgba(6,14,26,0.24)] to-transparent" />
 
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-[1240px] flex-col justify-between px-5 lg:px-8">
+        <div className="home-hero-shell relative z-10 flex flex-col justify-between">
           <motion.div
             initial={{ opacity: 0, y: 26 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-[720px] pb-8 pt-36 sm:pt-40 lg:pb-10 lg:pt-44"
+            className="max-w-[720px] pb-8 pt-[calc(78px+3.25rem)] sm:pt-[calc(78px+4.25rem)] lg:pb-10 lg:pt-[calc(78px+6rem)]"
           >
             <motion.h1
               initial={{ opacity: 0, y: 34 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.78, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className="font-heading text-3xl font-extrabold leading-[1.05] tracking-[-0.045em] text-white sm:text-4xl lg:text-[3.4rem] xl:text-[3.8rem]"
+              className="home-hero-title font-heading font-extrabold tracking-[-0.045em] text-white"
             >
               {heroTitleLines.map((line) => (
                 <span key={line} className="block">
@@ -62,7 +62,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.72, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-6 max-w-[600px] text-base leading-[1.8] text-white/90 sm:text-lg lg:max-w-[650px]"
+              className="hero-copy mt-6 max-w-[650px] text-white/90"
             >
               {SITE_COPY.home.subtitle}
             </motion.p>
@@ -71,19 +71,19 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-8 flex flex-col gap-3 sm:flex-row"
+              className="responsive-actions mt-8"
             >
               <button
                 type="button"
                 onClick={() => onNavigate('/desarrollos')}
-                className="rounded-[8px] bg-[#5f7a8c] px-5 py-3 text-sm font-extrabold text-white shadow-[0_12px_32px_rgba(20,31,49,0.2)] transition-colors hover:bg-[#6f8a9c]"
+                className="rounded-[8px] bg-[#5f7a8c] px-5 py-3 text-center text-sm font-extrabold text-white shadow-[0_12px_32px_rgba(20,31,49,0.2)] transition-colors hover:bg-[#6f8a9c]"
               >
                 Ver desarrollos
               </button>
               <button
                 type="button"
                 onClick={() => onNavigate('/contacto')}
-                className="rounded-[8px] border border-white/30 bg-[rgba(255,255,255,0.1)] px-5 py-3 text-sm font-extrabold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-[rgba(255,255,255,0.15)]"
+                className="rounded-[8px] border border-white/30 bg-[rgba(255,255,255,0.1)] px-5 py-3 text-center text-sm font-extrabold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-[rgba(255,255,255,0.15)]"
               >
                 Solicitar asesoría
               </button>
@@ -112,22 +112,22 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20 sm:py-24">
-        <div className="mx-auto max-w-[1240px]">
+      <section className="page-section bg-white">
+        <div className="page-container">
           <Reveal className="text-center">
             <p className="editorial-kicker text-[var(--color-copy)]/60">POR QUÉ ELEGIRNOS</p>
-            <h2 className="mt-4 font-heading text-4xl font-extrabold tracking-[-0.03em] text-[var(--color-heading)] sm:text-5xl lg:text-6xl">
+            <h2 className="section-display-title mt-4 font-heading font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
               LA DIFERENCIA LUXENT
             </h2>
           </Reveal>
 
-          <div className="mt-16 grid gap-6 lg:grid-cols-4">
+          <div className="mt-16 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
             {HOME_FEATURE_CARDS.map((card, index) => {
               const Icon = topIcons[index];
 
               return (
                 <Reveal key={card.title} delay={index * 0.08}>
-                  <article className="feature-card-hover h-full min-h-[320px] rounded-[8px] border border-[var(--color-line)] bg-white px-6 py-8 text-[var(--color-heading)] shadow-[0_24px_60px_rgba(26,40,61,0.06)] transition-all duration-300 hover:shadow-[0_20px_50px_rgba(26,40,61,0.12)]">
+                  <article className="feature-card-hover h-full rounded-[8px] border border-[var(--color-line)] bg-white px-5 py-6 text-[var(--color-heading)] shadow-[0_24px_60px_rgba(26,40,61,0.06)] transition-all duration-300 hover:shadow-[0_20px_50px_rgba(26,40,61,0.12)] sm:px-6 sm:py-8">
                     {card.badge && (
                       <span className="inline-flex rounded-[4px] border border-[var(--color-line)] px-3 py-1.5 text-[10px] font-extrabold tracking-[0.14em] uppercase text-[var(--color-copy)]">
                         {card.badge}
@@ -136,7 +136,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     <div className="mt-7 inline-flex h-12 w-12 items-center justify-center rounded-[10px] border border-[var(--color-line)] text-[var(--color-accent-strong)] feature-card-icon">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <h3 className="mt-6 max-w-[180px] font-heading text-2xl font-extrabold leading-[1.1] tracking-[-0.03em] text-[var(--color-heading)]">
+                    <h3 className="card-display-title mt-6 max-w-[13ch] font-heading font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
                       {card.title}
                     </h3>
                     <p className="mt-4 text-sm leading-7 text-[var(--color-copy)]">
@@ -154,14 +154,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         </div>
       </section>
 
-      <section className="bg-[var(--color-navy)] px-6 py-20 text-white sm:py-24">
+      <section className="page-section bg-[var(--color-navy)] text-white">
         <Reveal className="mx-auto max-w-[800px] text-center">
           <SectionDivider inverse />
-          <h2 className="mt-10 font-heading text-2xl font-medium leading-[1.3] tracking-[-0.03em] text-white/85 sm:text-4xl">
+          <h2 className="section-display-title mt-10 font-heading font-medium tracking-[-0.03em] text-white/85">
             Más que una inmobiliaria, <span className="font-extrabold text-white">somos tu aliado estratégico</span> en el mercado de bienes raíces de lujo.
           </h2>
           <SectionDivider inverse className="mt-10" />
-          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+          <div className="responsive-actions mt-10 justify-center">
             <button
               type="button"
               onClick={() => onNavigate('/quienes-somos')}
@@ -180,7 +180,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         </Reveal>
       </section>
 
-      <section className="relative isolate overflow-hidden px-6 py-20 text-white sm:py-24">
+      <section className="page-section-lg relative isolate overflow-hidden text-white">
         <img
           src={PROJECT_IMAGES.homeCta}
           alt="Comercialización inmobiliaria Luxent"
@@ -189,11 +189,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         />
         <div className="absolute inset-0 bg-[rgba(82,105,130,0.80)]" />
         <Reveal className="relative z-10 mx-auto max-w-[900px] text-center">
-          <h2 className="font-heading text-3xl font-extrabold leading-[1.05] tracking-[-0.05em] text-white sm:text-5xl lg:text-6xl">
+          <h2 className="section-display-title font-heading font-extrabold tracking-[-0.05em] text-white">
             {SITE_COPY.home.ctaTitle}
           </h2>
-          <p className="mx-auto mt-6 max-w-[700px] text-sm leading-7 text-white/85 sm:text-base">{SITE_COPY.home.ctaSubtitle}</p>
-          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+          <p className="hero-copy mx-auto mt-6 max-w-[700px] text-white/85">{SITE_COPY.home.ctaSubtitle}</p>
+          <div className="responsive-actions mt-10 justify-center">
             <button
               type="button"
               onClick={() => onNavigate('/contacto')}

@@ -54,7 +54,7 @@ export default function App() {
   }, [activePath]);
 
   return (
-    <div className="min-h-screen bg-[var(--color-surface)] text-[var(--color-ink)] selection:bg-[var(--color-accent)] selection:text-white">
+    <div className="min-h-screen bg-[var(--color-surface)] text-[var(--color-heading)] selection:bg-[var(--color-accent)] selection:text-white">
       <Header activePath={activePath} onNavigate={navigate} />
       <main>
         <AnimatePresence mode="wait">
