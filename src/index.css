@@ -27,6 +27,7 @@
   --page-hero-top-space: clamp(6.75rem, 11vw, 7rem);
   --page-hero-min-height: clamp(21rem, 62svh, 26rem);
   --card-min-height: 320px;
+  --mobile-panel: rgba(16, 26, 42, 0.52);
 }
 
 html {
@@ -99,6 +100,11 @@ textarea {
   min-height: var(--page-hero-min-height);
 }
 
+.page-hero-copy-shell,
+.mobile-hero-copy-shell {
+  max-width: min(100%, 48rem);
+}
+
 .section-display-title,
 .page-hero-title,
 .home-hero-title,
@@ -151,6 +157,19 @@ textarea {
 
 .responsive-actions > * {
   flex: 1 1 220px;
+  min-width: 0;
+}
+
+.mobile-section-heading {
+  text-align: left;
+}
+
+.mobile-card-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.mobile-card-grid > * {
   min-width: 0;
 }
 
@@ -281,11 +300,35 @@ textarea::placeholder {
     --section-space-lg: 4.5rem;
     --card-min-height: auto;
     --page-hero-min-height: 20rem;
+    --page-hero-top-space: 6.15rem;
+    --page-hero-title-size: clamp(2rem, 10vw, 2.75rem);
+    --home-hero-title-size: clamp(2.1rem, 11vw, 3rem);
+    --section-title-size: clamp(1.85rem, 9vw, 2.7rem);
   }
 
   .editorial-kicker {
     font-size: 0.68rem;
     letter-spacing: 0.18em;
+  }
+
+  .page-hero-copy-shell,
+  .mobile-hero-copy-shell {
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: linear-gradient(180deg, rgba(17, 27, 42, 0.72), rgba(17, 27, 42, 0.4));
+    backdrop-filter: blur(14px);
+    border-radius: 1.25rem;
+    box-shadow: 0 20px 48px rgba(4, 10, 20, 0.18);
+  }
+
+  .mobile-section-heading {
+    text-align: left;
+  }
+
+  .section-copy,
+  .page-hero-copy,
+  .hero-copy {
+    line-height: 1.72;
   }
 
   .responsive-actions > * {
@@ -305,5 +348,11 @@ textarea::placeholder {
 
   .section-rule {
     width: 36px;
+  }
+
+  .page-hero-copy-shell,
+  .mobile-hero-copy-shell {
+    padding: 1rem;
+    border-radius: 1rem;
   }
 }

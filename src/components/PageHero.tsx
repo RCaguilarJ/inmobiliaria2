@@ -31,7 +31,7 @@ export default function PageHero({
       <div className="absolute inset-0 bg-gradient-to-r from-[rgba(20,31,49,0.90)] via-[rgba(20,31,49,0.62)] to-[rgba(20,31,49,0.20)]" />
 
       <div className="relative z-10 mx-auto flex h-full max-w-[1240px] items-center pb-12 sm:pb-16">
-        <div className="space-y-5">
+        <div className="page-hero-copy-shell space-y-5">
           {eyebrow && <p className="editorial-kicker text-white/36">{eyebrow}</p>}
           <h1 className={`page-hero-title font-heading font-extrabold tracking-[-0.03em] text-white ${titleClassName}`}>
             {title}

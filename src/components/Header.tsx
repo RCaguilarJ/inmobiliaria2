@@ -15,6 +15,18 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
   const [isHomeHeroActive, setIsHomeHeroActive] = useState(activePath === '/');
 
   useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
     if (activePath !== '/') {
       setIsHomeHeroActive(false);
       return;
@@ -87,7 +99,7 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
                 onClick={() => handleNav('/contacto')}
                 className="shrink-0 rounded-full bg-[var(--color-navy)] px-8 py-3 text-sm font-semibold text-white shadow-[0_14px_40px_rgba(15,28,45,0.24)] transition-colors hover:bg-[#1d2b46]"
               >
-                Agendar asesoría
+                Agendar asesorÃ­a
               </button>
             </div>
 
@@ -136,7 +148,7 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
                 onClick={() => handleNav('/contacto')}
                 className="rounded-[14px] bg-[var(--color-accent-strong)] px-6 py-3 text-[13px] font-bold text-white shadow-[0_14px_36px_rgba(33,51,77,0.18)]"
               >
-                Agendar asesoría
+                Agendar asesorÃ­a
               </button>
             </div>
 
@@ -155,24 +167,34 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="border-t border-[var(--color-line)] bg-white xl:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-x-0 bottom-0 top-[78px] bg-[rgba(10,18,30,0.44)] backdrop-blur-sm xl:hidden"
           >
-            <div className="mx-auto flex max-w-[1240px] flex-col gap-2 px-5 py-4">
-              {NAV_ITEMS.map((item) => {
+            <motion.div
+              initial={{ opacity: 0, y: -18 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -18 }}
+              className="mx-4 mt-4 rounded-[24px] border border-white/10 bg-[var(--color-navy)] px-4 py-4 text-white shadow-[0_24px_70px_rgba(11,18,31,0.34)]"
+            >
+              {NAV_ITEMS.map((item, index) => {
                 const active = item.path === activePath;
                 return (
                   <button
                     key={item.path}
                     type="button"
                     onClick={() => handleNav(item.path)}
-                    className={`rounded-xl px-4 py-3 text-left text-sm font-semibold ${
-                      active ? 'bg-[var(--color-surface-soft)] text-[var(--color-navy)]' : 'text-[var(--color-copy)]'
+                    className={`flex w-full items-center justify-between rounded-[18px] px-4 py-3.5 text-left text-sm font-semibold ${
+                      active
+                        ? 'bg-white text-[var(--color-navy)]'
+                        : 'mt-2 border border-white/10 bg-white/4 text-white/76 first:mt-0'
                     }`}
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    <span className={`text-[11px] uppercase tracking-[0.14em] ${active ? 'text-[var(--color-accent-strong)]' : 'text-white/35'}`}>
+                      0{index + 1}
+                    </span>
                   </button>
                 );
               })}
@@ -180,11 +202,11 @@ export default function Header({ activePath, onNavigate }: HeaderProps) {
               <button
                 type="button"
                 onClick={() => handleNav('/contacto')}
-                className="mt-2 rounded-xl bg-[var(--color-accent-strong)] px-4 py-3 text-sm font-bold text-white"
+                className="mt-4 w-full rounded-[18px] bg-[var(--color-accent-strong)] px-4 py-4 text-sm font-bold text-white"
               >
-                Agendar asesoría
+                Agendar asesorÃ­a
               </button>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

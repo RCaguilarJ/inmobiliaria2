@@ -44,7 +44,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             initial={{ opacity: 0, y: 26 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-[720px] pb-8 pt-[calc(78px+3.25rem)] sm:pt-[calc(78px+4.25rem)] lg:pb-10 lg:pt-[calc(78px+6rem)]"
+            className="mobile-hero-copy-shell max-w-[720px] self-start pb-6 pt-[calc(78px+2rem)] sm:pt-[calc(78px+4.25rem)] lg:pb-10 lg:pt-[calc(78px+6rem)]"
           >
             <motion.h1
               initial={{ opacity: 0, y: 34 }}
@@ -94,17 +94,17 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.36, ease: [0.22, 1, 0.36, 1] }}
-            className="grid gap-4 border-t border-white/10 bg-[rgba(13,23,38,0.35)] px-4 py-6 backdrop-blur-md sm:grid-cols-2 lg:grid-cols-4 lg:px-6 lg:py-8"
+            className="grid grid-cols-2 gap-3 border-t border-white/10 bg-[rgba(13,23,38,0.4)] px-3 py-4 backdrop-blur-md sm:grid-cols-2 sm:gap-4 sm:px-4 sm:py-6 lg:grid-cols-4 lg:px-6 lg:py-8"
           >
             {HERO_FEATURES.map((item, index) => {
               const Icon = heroIcons[index];
 
               return (
-                <div key={item.title} className="flex items-center gap-3">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-[16px] border border-white/20 bg-[rgba(255,255,255,0.08)] text-white shadow-[0_10px_24px_rgba(0,0,0,0.10)]">
-                    <Icon className="h-5 w-5 text-white" />
+                <div key={item.title} className="flex min-h-[92px] flex-col gap-3 rounded-[18px] border border-white/10 bg-[rgba(255,255,255,0.05)] p-3 sm:min-h-0 sm:flex-row sm:items-center sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0">
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-[14px] border border-white/20 bg-[rgba(255,255,255,0.08)] text-white shadow-[0_10px_24px_rgba(0,0,0,0.10)] sm:h-12 sm:w-12 sm:rounded-[16px]">
+                    <Icon className="h-4 w-4 text-white sm:h-5 sm:w-5" />
                   </div>
-                  <p className="text-sm font-semibold leading-[1.3] text-white/95">{item.title}</p>
+                  <p className="text-[0.8rem] font-semibold leading-[1.35] text-white/95 sm:text-sm">{item.title}</p>
                 </div>
               );
             })}
@@ -114,20 +114,20 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
       <section className="page-section bg-white">
         <div className="page-container">
-          <Reveal className="text-center">
+          <Reveal className="mobile-section-heading text-left sm:text-center">
             <p className="editorial-kicker text-[var(--color-copy)]/60">POR QUÉ ELEGIRNOS</p>
             <h2 className="section-display-title mt-4 font-heading font-extrabold tracking-[-0.03em] text-[var(--color-heading)]">
               LA DIFERENCIA LUXENT
             </h2>
           </Reveal>
 
-          <div className="mt-16 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="mobile-card-grid mt-12 sm:mt-16 sm:grid-cols-2 xl:grid-cols-4">
             {HOME_FEATURE_CARDS.map((card, index) => {
               const Icon = topIcons[index];
 
               return (
                 <Reveal key={card.title} delay={index * 0.08}>
-                  <article className="feature-card-hover h-full rounded-[8px] border border-[var(--color-line)] bg-white px-5 py-6 text-[var(--color-heading)] shadow-[0_24px_60px_rgba(26,40,61,0.06)] transition-all duration-300 hover:shadow-[0_20px_50px_rgba(26,40,61,0.12)] sm:px-6 sm:py-8">
+                  <article className="feature-card-hover h-full rounded-[18px] border border-[var(--color-line)] bg-white px-5 py-6 text-[var(--color-heading)] shadow-[0_18px_44px_rgba(26,40,61,0.08)] transition-all duration-300 hover:shadow-[0_20px_50px_rgba(26,40,61,0.12)] sm:rounded-[8px] sm:px-6 sm:py-8">
                     {card.badge && (
                       <span className="inline-flex rounded-[4px] border border-[var(--color-line)] px-3 py-1.5 text-[10px] font-extrabold tracking-[0.14em] uppercase text-[var(--color-copy)]">
                         {card.badge}
@@ -165,14 +165,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             <button
               type="button"
               onClick={() => onNavigate('/quienes-somos')}
-              className="rounded-[6px] bg-[var(--color-accent)] px-8 py-3.5 text-xs font-extrabold uppercase tracking-[0.08em] text-white transition-colors hover:bg-[var(--color-accent-strong)]"
+                className="rounded-[14px] bg-[var(--color-accent)] px-8 py-4 text-xs font-extrabold uppercase tracking-[0.08em] text-white transition-colors hover:bg-[var(--color-accent-strong)]"
             >
               Conoce nuestra historia
             </button>
             <button
               type="button"
               onClick={() => onNavigate('/desarrollos')}
-              className="rounded-[6px] border border-white/30 px-8 py-3.5 text-xs font-extrabold uppercase tracking-[0.08em] text-white transition-all hover:border-white/50 hover:bg-white/5"
+                className="rounded-[14px] border border-white/30 px-8 py-4 text-xs font-extrabold uppercase tracking-[0.08em] text-white transition-all hover:border-white/50 hover:bg-white/5"
             >
               Ver desarrollos
             </button>
@@ -188,7 +188,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-[rgba(82,105,130,0.80)]" />
-        <Reveal className="relative z-10 mx-auto max-w-[900px] text-center">
+        <Reveal className="relative z-10 mx-auto max-w-[900px] rounded-[24px] border border-white/15 bg-[rgba(12,20,34,0.26)] px-4 py-8 text-left backdrop-blur-md sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:text-center">
           <h2 className="section-display-title font-heading font-extrabold tracking-[-0.05em] text-white">
             {SITE_COPY.home.ctaTitle}
           </h2>

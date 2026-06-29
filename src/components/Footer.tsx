@@ -17,15 +17,15 @@ const socials = [
 export default function Footer({ activePath, onNavigate }: FooterProps) {
   return (
     <footer className="bg-[var(--color-navy)] text-white">
-      <div className="mx-auto grid max-w-[1240px] gap-12 px-[var(--page-gutter)] py-16 sm:grid-cols-2 xl:grid-cols-[1.2fr_0.8fr_1fr_1fr]">
-        <div className="space-y-5">
+      <div className="mx-auto grid max-w-[1240px] gap-10 px-[var(--page-gutter)] py-14 sm:grid-cols-2 sm:gap-12 sm:py-16 xl:grid-cols-[1.2fr_0.8fr_1fr_1fr]">
+        <div className="space-y-5 rounded-[22px] border border-white/8 bg-white/4 p-5 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0">
           <CountryClubLogo variant="dark" className="w-[168px]" />
           <p className="max-w-[220px] text-sm leading-7 text-white/70">
             {FOOTER_COPY.tagline}
           </p>
         </div>
 
-        <div>
+        <div className="sm:pl-0">
           <h3 className="text-[14px] font-extrabold tracking-[0.04em] text-white">
             ENLACES RÁPIDOS
           </h3>
